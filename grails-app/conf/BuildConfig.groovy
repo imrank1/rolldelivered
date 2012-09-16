@@ -42,5 +42,7 @@ grails.project.dependency.resolution = {
         runtime ":resources:1.1.5"
 
         build ":tomcat:$grailsVersion"
+        compile ':heroku:1.0.1'
+        compile ':cloud-support:1.0.8'
     }
 }
