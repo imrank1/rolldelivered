@@ -5,6 +5,7 @@ import com.stripe.model.Charge
 import com.stripe.exception.CardException
 import com.stripe.Stripe
 import rolldeliver.PurchaseRecord
+import com.rolldeliver.Errors
 import grails.converters.JSON;
 class CheckoutController {
 
@@ -53,11 +54,15 @@ class CheckoutController {
         }
 
 		log.info 'status is ${status}'
-
+        try{
         sendMail  {
             to "${email}"
             subject "Subscription Confirmation with RollDelivered"
-            body "Thanks for signing up with RollDelivered! "
+            body "Thanks for signing up with RollDelivered! You're on you way to simplifying your life! If you have any questions/concertins/want to cancel simply email us at support@rolldelivered.com."
+        }}catch(Exception ex){
+            log.info "Failed to send confirmation email to ${email}"
+            Errors error = new Errors(message:"Failed to send confirmation email to ${email}",date:new Date())
+            error.save()
         }
         
         status = "Thanks for signing up!"
