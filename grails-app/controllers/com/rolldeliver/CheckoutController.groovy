@@ -66,7 +66,7 @@ class CheckoutController {
         }
         
         status = "Thanks for signing up!"
-def res = [:]
+        def res = [:]
         res.success = true
         render res as JSON
     }

@@ -120,7 +120,7 @@
                 }
             });
         $(".submit-button").removeAttr("disabled");
-
+        return false;
       }
     }
     </script>
