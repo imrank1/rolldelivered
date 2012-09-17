@@ -1,166 +1,183 @@
-body {
-	background-position:top left;
-	background-repeat:repeat;
-	margin:0px;
-	padding:0px;
-	font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
-	font-size:13px;
-	line-height:1.5em;
-}
-a, a:link, a:visited {
-	outline: none; /*gets rid of dotted select lines after clicking an image link*/
-}
-a:hover {
-	text-decoration:none;
-}
-#fixed_header {
-	position:fixed;
-	right:0;
-	left:0;
-	top:0;
-	z-index:1000;
-	background-position:top;
-	background-repeat:repeat-x;
-}
-#bg_top { /*the design for the header*/
-	width:100%;
-	min-height:112px;
-	padding-top:112px;
-}
-#wrapper {
-	width:980px;
-	margin:0px auto;
-}
-#header {
-	height:87px;
-	width:980px;
-	margin:0px auto 0 auto;
-	padding-top:25px;
-}
-#logo {
-	width:231px;
-	height:48px;
-	margin:0px 0 0 0px;/*the indent on the top and left side*/
-	float:left;
-}
-/*menu*/
-#menu { /*the container that holds the main menu*/
-	float:left;
-	width:710px;
-	padding:0;
-	margin:0px 0 0 30px;
-}
-ul#navigation {
-	margin:0px 0 0 0px; /*indent to line up with the logo*/
-	padding:0px;
-	float:left;
-	position:absolute;  /*makes dropdown sit on top of flash & map*/
-	z-index:100; /*makes dropdown sit on top of flash & map*/
-}
-ul#navigation li {
-	float:left;
-	list-style:none;
-	display:inline;
-	padding:0px;
-	margin:0px;
-}
-ul#navigation a {
-	float:left; /*makes the text sit beside each other not down the page*/
-	padding:28px 13px 30px 13px; /*space around and inbetween the buttons, top, right, bottom, left*/
-	text-decoration:none; /*no underline*/
-	font:24px 'Droid Sans', arial, serif; /*menu text size and font*/
-	display:block;
-}
-ul#navigation li.hover a, ul#navigation li:hover a, ul#navigation a.active, ul#navigation a:hover {
-	
-}
-/*--drop down menu second-level - this is optional--*/
-ul#navigation li.hover, ul#navigation li:hover {
-	position:relative;
-}
-ul#navigation li.hover ul.second-level, ul#navigation li:hover ul.second-level {
-	display:block;
-}
-ul#navigation li.hover ul.second-level ul.third-level, ul#navigation li:hover ul.second-level ul.third-level {
-	display:none;
-}
-ul#navigation ul.second-level {
-	position:absolute;
-	top:84px; /*how far away from the top menu*/
-	left:0;
-	margin:0;
-	padding:5px;
-	width:200px;
-	display:none;
-}
-ul#navigation ul.second-level li {
-	width:200px;
-	margin:0;
-}
-ul#navigation ul.second-level a {
-	display:block;
-	float:none;
-	width:180px;
-	border:none;
-	padding:10px 10px;
-	background:none;
-	font-size:14px; /*font size */
-	line-height:14px;
-	text-transform:none; /*turns off the uppercase*/
-}
-ul#navigation ul.second-level li.hover a, ul#navigation ul.second-level li:hover a, ul#navigation ul.second-level a:hover {
-	
-}
-/*main box*/
-.main_box_background{
-	margin-top:30px;
-	margin-bottom:100px;
-	padding-bottom:65px;
-}
-.main_box_wrapper {
-	padding-top:112px;
-}
-.main_box {
-	width:980px;/*980px*/
-	min-height:440px;
-	position:relative;
-	z-index:5;
-}
-.main_box .content {
-	padding:30px 30px 30px 30px;
-	width:920px;
-}
-/*home*/
-.home_box {
-	width:920px;/*980px*/
-	height:470px;/*500px*/
-	padding:0 30px 30px 30px;
-}
-.home_box .text {
-	width:510px;
-	margin:60px 0 0 10px;
-	float:left;
-}
-.home_box h1 {
-	font-size:36px;
-}
-.home_box h2 {
-	font-size:24px;
-}
-ul.buttons_float {
-	list-style:none;
-	margin:30px 35px 0 0px;
-	padding:35px;
-}
-ul.buttons_float li {
-	float:left;
-	width:154px;
-	margin:0 30px 0 0;
-	padding:0px;
-}
-.button_med {
-	width:149px;/*154px*/
-	height:31px;
+	label.valid {
+		width: 24px;
+		height: 24px;
+		background: url(assets/img/valid.png) center center no-repeat;
+		display: inline-block;
+		text-indent: -9999px;
+	}
+	label.error {
+		font-weight: bold;
+		color: red;
+		padding: 2px 8px;
+		margin-top: 2px;
+	}
+
+
+
+
+	body {
+		background-position:top left;
+		background-repeat:repeat;
+		margin:0px;
+		padding:0px;
+		font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
+		font-size:13px;
+		line-height:1.5em;
+	}
+	a, a:link, a:visited {
+		outline: none; /*gets rid of dotted select lines after clicking an image link*/
+	}
+	a:hover {
+		text-decoration:none;
+	}
+	#fixed_header {
+		position:fixed;
+		right:0;
+		left:0;
+		top:0;
+		z-index:1000;
+		background-position:top;
+		background-repeat:repeat-x;
+	}
+	#bg_top { /*the design for the header*/
+		width:100%;
+		min-height:112px;
+		padding-top:112px;
+	}
+	#wrapper {
+		width:980px;
+		margin:0px auto;
+	}
+	#header {
+		height:87px;
+		width:980px;
+		margin:0px auto 0 auto;
+		padding-top:25px;
+	}
+	#logo {
+		width:231px;
+		height:48px;
+		margin:0px 0 0 0px;/*the indent on the top and left side*/
+		float:left;
+	}
+	/*menu*/
+	#menu { /*the container that holds the main menu*/
+		float:left;
+		width:710px;
+		padding:0;
+		margin:0px 0 0 30px;
+	}
+	ul#navigation {
+		margin:0px 0 0 0px; /*indent to line up with the logo*/
+		padding:0px;
+		float:left;
+		position:absolute;  /*makes dropdown sit on top of flash & map*/
+		z-index:100; /*makes dropdown sit on top of flash & map*/
+	}
+	ul#navigation li {
+		float:left;
+		list-style:none;
+		display:inline;
+		padding:0px;
+		margin:0px;
+	}
+	ul#navigation a {
+		float:left; /*makes the text sit beside each other not down the page*/
+		padding:28px 13px 30px 13px; /*space around and inbetween the buttons, top, right, bottom, left*/
+		text-decoration:none; /*no underline*/
+		font:24px 'Droid Sans', arial, serif; /*menu text size and font*/
+		display:block;
+	}
+	ul#navigation li.hover a, ul#navigation li:hover a, ul#navigation a.active, ul#navigation a:hover {
+
+	}
+	/*--drop down menu second-level - this is optional--*/
+	ul#navigation li.hover, ul#navigation li:hover {
+		position:relative;
+	}
+	ul#navigation li.hover ul.second-level, ul#navigation li:hover ul.second-level {
+		display:block;
+	}
+	ul#navigation li.hover ul.second-level ul.third-level, ul#navigation li:hover ul.second-level ul.third-level {
+		display:none;
+	}
+	ul#navigation ul.second-level {
+		position:absolute;
+		top:84px; /*how far away from the top menu*/
+		left:0;
+		margin:0;
+		padding:5px;
+		width:200px;
+		display:none;
+	}
+	ul#navigation ul.second-level li {
+		width:200px;
+		margin:0;
+	}
+	ul#navigation ul.second-level a {
+		display:block;
+		float:none;
+		width:180px;
+		border:none;
+		padding:10px 10px;
+		background:none;
+		font-size:14px; /*font size */
+		line-height:14px;
+		text-transform:none; /*turns off the uppercase*/
+	}
+	ul#navigation ul.second-level li.hover a, ul#navigation ul.second-level li:hover a, ul#navigation ul.second-level a:hover {
+
+	}
+	/*main box*/
+	.main_box_background{
+		margin-top:30px;
+		margin-bottom:100px;
+		padding-bottom:65px;
+	}
+	.main_box_wrapper {
+		padding-top:112px;
+	}
+	.main_box {
+		width:980px;/*980px*/
+		min-height:440px;
+		position:relative;
+		z-index:5;
+	}
+	.main_box .content {
+		padding:30px 30px 30px 30px;
+		width:920px;
+	}
+	/*home*/
+	.home_box {
+		width:920px;/*980px*/
+		height:470px;/*500px*/
+		padding:0 30px 30px 30px;
+	}
+	.home_box .text {
+		width:510px;
+		margin:60px 0 0 10px;
+		float:left;
+	}
+	.home_box h1 {
+		font-size:36px;
+	}
+	.home_box h2 {
+		font-size:24px;
+	}
+	ul.buttons_float {
+		list-style:none;
+		margin:30px 35px 0 0px;
+		padding:35px;
+	}
+	ul.buttons_float li {
+		float:left;
+		width:154px;
+		margin:0 30px 0 0;
+		padding:0px;
+	}
+	.button_med {
+		width:149px;/*154px*/
+		height:31px;
 	/*margin:433px 0 0 30px;
 	position:absolute;*/
 	padding:9px 0 10px 5px;
@@ -309,7 +326,7 @@ ul.dots li {
 }
 .feature {
 /*float:left;
-	width:445px;*/
+width:445px;*/
 }
 .feature img {
 }
@@ -530,7 +547,7 @@ ul.payment li {
 	border:none;
 	font-size:24px;
 	line-height:normal;
-    cursor:pointer;
+	cursor:pointer;
 }
 .button {
 	border:none;
@@ -641,12 +658,12 @@ hr {
 	margin:10px 0 10px 0;	
 }
 .review_title{
-	 color: #0079C2;
-	 font-size:18px;
-	 line-height:normal;
-	 padding:0px 0 5px 0px;
-	 margin:0px;
-	 
+	color: #0079C2;
+	font-size:18px;
+	line-height:normal;
+	padding:0px 0 5px 0px;
+	margin:0px;
+
 }
 
 .review_date{
@@ -959,20 +976,20 @@ ul.map_buttons li a {
 
 
 .cart_summary_outer_wrap{
-    clear:both;
-    padding:5px 0;
+	clear:both;
+	padding:5px 0;
 }
 .cart_summary_wrap{
-    font-size:18px;
-    font-weight:bold;
-    padding:5px 0;
-    clear:both;
-    height:33px;
+	font-size:18px;
+	font-weight:bold;
+	padding:5px 0;
+	clear:both;
+	height:33px;
 }
 .cart_summary_wrap label,
 .cart_summary_wrap span{
-    font-size:18px;
-    font-weight:bold;
+	font-size:18px;
+	font-weight:bold;
 }
 
 
@@ -1030,9 +1047,9 @@ ul.map_buttons li a {
 	-webkit-box-shadow:0px 0px 0px 3px rgba(0,0,0,0.1) ,inset 0px 1px 0px rgba(255,255,255,0.25);
 	box-shadow:0px 0px 0px 3px rgba(0,0,0,0.1) ,inset 0px 1px 0px rgba(255,255,255,0.25);
 	-ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff5f6a70,endColorstr=#ff535b5f,GradientType=0)
-		progid:DXImageTransform.Microsoft.Glow(Color=#ff000000,Strength=3)";
+	progid:DXImageTransform.Microsoft.Glow(Color=#ff000000,Strength=3)";
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff5f6a70,endColorstr=#ff535b5f,GradientType=0)
-		progid:DXImageTransform.Microsoft.Glow(Color=#ff000000,Strength=3);
+	progid:DXImageTransform.Microsoft.Glow(Color=#ff000000,Strength=3);
 }
 .ml-btn-13:hover {
 	opacity: 0.8;

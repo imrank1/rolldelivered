@@ -46,6 +46,6 @@ grails.project.dependency.resolution = {
         exclude 'database-session'
         }
         compile ':cloud-support:1.0.8'
-        compile ':mongodb:1.0.0.RC3'
+        compile ':mongodb:1.0.0.RC5'
     }
 }

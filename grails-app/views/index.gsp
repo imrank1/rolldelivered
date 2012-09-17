@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="css/styles.css" type="text/css" />
   <link rel="stylesheet" href="css/eco.css" type="text/css" />
   <link href="css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
-  <!--[if IE 9]> <link rel="stylesheet" href="css/styles_ie9.css" type="text/css" /> <![endif]-->
-  <!--[if IE 8]> <link rel="stylesheet" href="css/styles_ie8.css" type="text/css" /> <![endif]-->
-  <!--[if IE 7]> <link rel="stylesheet" href="css/styles_ie7.css" type="text/css" /> <![endif]-->
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css' />
   <link rel="stylesheet" href="css/jquery.lightbox-0.5.css" type="text/css" />
   <link rel="stylesheet" href="php/widget-rating.php?css" type="text/css" />
@@ -21,12 +18,57 @@
   <script type="text/javascript" src="js/dtbaker_slider.js"></script>
   <script type="text/javascript" src="js/dtbaker_animation.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/spin.min.js"></script>
+
 
   <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
   <script type="text/javascript">
   Stripe.setPublishableKey('pk_07vkx4yqszys5bnTNnHPSAAimkCie');
 
   $(document).ready(function() {
+
+  $('#payment-form').validate({
+        rules: {
+          firstName: {
+            minlength: 2,
+            required: true
+          },
+          lastName: {
+            minlength: 2,
+            required: true
+          },
+          email: {
+            required: true,
+            email: true
+          },
+          emailConfirmation: {
+            required: true,
+            email: true
+          },
+          ccnumber: {
+            required: true,
+            creditcard:true
+          },
+          cvv: {
+            minlength: 3,
+            required: true
+          }
+        },
+        highlight: function(label) {
+          $(label).closest('.control-group').addClass('error');
+        },
+        success: function(label) {
+          label
+            .text('OK!').addClass('valid')
+            .closest('.control-group').addClass('success');
+        }
+      });
+
+
+
+
+
     $("#payment-form").submit(function(event) {
       $("#errorMessage").hide("slow");
       $("#successMessage").hide("slow");
@@ -64,11 +106,17 @@
         //form$.get(0).submit();
        var fName = $('#firstName').val();
        var lName = $('#lastName').val();
+       var address1 = $('#address1').val();
+       var address2 = $('#address2').val();
+       var city = $('#city').val();
+       var zip = $('#zip').val();
+
+
        var e = $('#email').val();
         $.ajax({
                 url: 'checkout/charge',
                 type: 'post',
-                data: { firstName: fName,lastName:lName,email:e,stripeToken:token },
+                data: { firstName: fName,lastName:lName,email:e,stripeToken:token,address1:address1,address2:address2,city:city,zip:zip },
                 cache: false,
                 success: function(){ 
                     $("#successMessage").show("slow");
@@ -222,34 +270,6 @@
       <div class="main_box_bg_left"></div>
       <div class="main_box">
         <div class="content">
-    <!--        <div class="left_460">
-                  <h1>Buy Now</h1>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sagittis nisi varius lorem posuere tristique condimentum eros ornare. Nunc fermentum, urna condimentum imperdiet congue, magna odio cursus mauris, a hendrerit lacus arcu id dolor. In hac habitasse platea dictumst. Nunc massa metus, rhoncus et luctus sit amet, vehicula in lorem. Cras facilisis, ipsum non dictum egestas, dolor lorem fermentum lorem, sed aliquam arcu sem vitae nisl. Etiam est mauris, lobortis sit amet accumsan ut, auctor vitae ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. </p>
-                  <ul class="ticklist">
-                <li>Vestibulum ante ipsum primis</li>
-                <li>In faucibus orci luctus et ultrices posuere cubilia</li>
-                <li>Ida dapibus. Duis volutpat lectus</li>
-              </ul>
-                  <div class="sale_border">
-                <div class="sale">
-                      <div class="left">
-                    <p class="title18">Buy the product online &amp; save! </p>
-                    <p class="title30"> Online sale price: </p>
-                    <p class="title14">*Price includes tax and free shipping </p>
-                  </div>
-                      <div class="balls"><span class="price1">$9.99</span> <span class="price2">SAVE<br />
-                        <span class="size24">$50</span></span></div>
-                      <div class="clear"></div>
-                    </div>
-              </div>
-                </div>
-              -->
-
-              <!--end left-->
-            <!--
-            <div class="right_400"><img src="images/eco/buy_book.jpg" width="400" height="430" alt="book" /></div>
-            <div class="clear"></div>
-          -->
           <div class="two_column_wrapper">
             <div class="side_left">
 
@@ -306,39 +326,27 @@
                     </div>
 
 
-                     <div class="clearfix">
+                     <div class="control-group">
                       <label for="user_name">Last Name</label>
                       <div class="input">
                         <input class="field" id="lastName" name="lastName" size="30" type="text" />
                       </div>
                     </div>
 
-                    <div class="clearfix">
+                    <div class="control-group">
                       <label for="user_email">Email</label>
                       <div class="input">
                         <input class="field" id="email" name="email" size="30" type="text" />
                       </div>
                     </div>
 
-                    <div class="clearfix">
+                    <div class="control-group">
                       <label for="user_email">Email Confirmation</label>
                       <div class="input">
                         <input class="field" id="emailConfirmation" name="emailConfirmation" size="30" type="text" />
                       </div>
                     </div>
-                    <div class="clearfix">
-                      <label for="user_password">Password</label>
-                      <div class="input">
-                        <input class="field" id="user_password" name="user[password]" size="30" type="password" />
-                      </div>
-                    </div>
-
-                    <div class="clearfix">
-                      <label for="user_password_confirmation">Password confirmation</label>
-                      <div class="input">
-                        <input class="field" id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" />
-                      </div>
-
+                   
                       <input id="user_stripe_token" name="user[stripe_token]" type="hidden" />
                       <input id="user_last_4_digits" name="user[last_4_digits]" type="hidden" />
                     </div>
@@ -347,29 +355,30 @@
                     <noscript>
                       <p>This form requires Javascript to use</p>
                     </noscript>
-
+                    <div class="control-group">
                     <div id="credit-card" style="display:block">
                       <div id="credit-card-errors" style="display:none">
                         <div id="stripe-error-message" class="alert-message block-message error">
                         </div>
                       </div>
+                    </div>
 
                       <!-- these fields are disabled before submission and are never transmitted back to rails -->
-                      <div class="clearfix">
-                        <label for="credit_card_number">Credit card number</label>
+                     <div class="control-group"> 
+                        <label for="ccnumber">Credit card number</label>
                         <div class="input">
-                          <input class="field card-number" id="credit_card_number" type="text" />
+                          <input class="field card-number" id="ccnumber" type="text" />
                         </div>
-                      </div>
+                    </div>
 
-                      <div class="clearfix">
+                     <div class="control-group"> 
                         <label for="cvv">Security code (CVV)</label>
                         <div class="input">
                           <input class="input-small card-cvc"  id="cvv"  type="text" />
                         </div>
                       </div>
 
-                      <div class="clearfix">
+                     <div class="control-group"> 
                         <label for="expiry_date">Expiry date</label>
                         <div class="input">
 
@@ -416,21 +425,54 @@
                             <option value="2037">2037</option>
                           </select>
 
-                        </div>
-                        <!-- empty -->
+<!--                         </div>
+ -->                        <!-- empty -->
                       </div>
+
+
+
+                    <div class="control-group"> 
+                        <label for="address1">Address</label>
+                        <div class="input">
+                          <input class="field " id="address1" id="address1" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="control-group"> 
+                        <label for="address2">Additional Address Info (Optional) </label>
+                        <div class="input">
+                          <input class="field " id="address2" id="address2" type="text" />
+                        </div>
+                    </div>
+
+                    <div class="control-group"> 
+                        <label for="city">City </label>
+                        <div class="input">
+                          <input class="field " id="city" id="city" type="text" />
+                        </div>
+                    </div>
+
+
+                    <div class="control-group"> 
+                        <label for="zip">Zip Code </label>
+                        <div class="input">
+                          <input class="field " id="zip" id="zip" type="text" />
+                        </div>
+                    </div>
                       <span class="note">
-                        Your credit card details will be securely sent directly to our payment processor
+                        Your credit card details will be securely sent directly to our payment processor.
                       </span>
                     </div>
 
                     <div class="actions">
-                      <button type="submit" class="btn-primary submit-button">Register!</button>
+                      <button type="submit" id="submit-button" class="btn-primary submit-button">Register!</button>
                     </div>
                   </form>
-
-                  <p id="successMessage" style="display: none">Hey Thanks for signing up!</p>
-                   <p id="errorMessage" style="display: none">Hmm somthing went wrong!</p>
+<div class="alert alert-success" id="successMessage"> Awesome! You're all signed up! Look for an email from us shortly!
+                </div>
+                <div class="alert alert-error"
+                   <p id="errorMessage" class="alert alert-error" style="display: none">Hmm somthing went wrong! Check the fields above or contact support at support@rolldelivered.com</p>
+                 </div>
                       </fieldset>
                 </div>
               </div>
@@ -456,120 +498,7 @@
       </div>
       <!--end under animation-->
 
-      <!--portfolio box-->
-      <div class="main_box_wrapper" id="features">
-        <div class="main_box_background"> <!-- start box background -->
-          <div class="main_box_bg_left"></div>
-          <div class="main_box">
-            <div class="content">
-              <div id="portfolio_slider" class="slider_container">
-                <div class="slider_header">
-                  <h1>Features</h1>
-                  <ul class="slider_buttons">
-                    <li><a href="#" class="portfolio_prev slider_prev">&laquo; prev</a></li>
-                    <li><a href="#" class="portfolio_next slider_next">next &raquo;</a></li>
-                  </ul>
-                </div>
-                <div class="slider_wrapper">
-                  <div class="slider_mover">
-                    <!-- start -->
-                    <div>
-                      <ul class="threecols">
-                        <li class="margin_right_30">
-                          <div class="feature">
-                            <div class="image"> <a href="images/feature1.jpg" class="lightbox"><img src="images/eco/icon_1.jpg" alt="Photo" width="286" height="190" border="0" /></a></div>
-                            <div class="text">
-                              <h3 style="font-weight:bold">Feature 1</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales metus id mi suscipit ut ullamcorper lectus congue. Ut a massa volutpat ipsum tempor auctor faucibus eget arcu.</p>
-                              <p><a href="#" target="_blank" class="link_button">more</a></p>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="margin_right_30">
-                          <div class="feature">
-                            <div class="image"> <a href="images/feature2.jpg" class="lightbox"><img src="images/eco/icon_2.jpg" alt="photo" width="286" height="190" border="0" /></a></div>
-                            <div class="text">
-                              <h3 style="font-weight:bold">Feature 2</h3>
-                              <ul class="dots">
-                                <li>Lorem ipsum dolor sit amet</li>
-                                <li>Consectetur adipiscing elit. </li>
-                                <li>Fusce sodales metus</li>
-                                <li>Id mi suscipit ut</li>
-                                <li>ullamcorper lectus congue.</li>
-                              </ul>
-                              <p><a href="#" target="_blank" class="link_button">more</a></p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="feature">
-                            <div class="image"> <a href="images/feature3.jpg" class="lightbox"><img src="images/eco/icon_3.jpg" alt="Photo" width="286" height="190" border="0" /></a></div>
-                            <div class="text">
-                              <h3 style="font-weight:bold">Feature 3</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales metus id mi suscipit ut ullamcorper lectus congue. Ut a massa volutpat ipsum tempor auctor faucibus eget arcu.</p>
-                              <p><a href="#" target="_blank" class="link_button">more</a></p>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <!-- end -->
-                    <!-- start 2 -->
-                    <div>
-                      <ul class="threecols">
-                        <li class="margin_right_30">
-                          <div class="feature">
-                            <div class="image"> <a href="images/feature1.jpg" class="lightbox"><img src="images/eco/icon_4.jpg" alt="Photo" width="286" height="190" border="0" /></a></div>
-                            <div class="text">
-                              <h3 style="font-weight:bold">Feature 4</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales metus id mi suscipit ut ullamcorper lectus congue. Ut a massa volutpat ipsum tempor auctor faucibus eget arcu.</p>
-                              <p><a href="#" target="_blank" class="link_button">more</a></p>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="margin_right_30">
-                          <div class="feature">
-                            <div class="image"> <a href="images/feature2.jpg" class="lightbox"><img src="images/eco/icon_5.jpg" alt="photo" width="286" height="190" border="0" /></a></div>
-                            <div class="text">
-                              <h3 style="font-weight:bold">Feature 5</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales metus id mi suscipit ut ullamcorper lectus congue. Ut a massa volutpat ipsum tempor auctor faucibus eget arcu.</p>
-                              <p><a href="#" target="_blank" class="link_button">more</a></p>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="feature">
-                            <div class="image"> <a href="images/feature3.jpg" class="lightbox"><img src="images/eco/icon_6.jpg" alt="Photo" width="286" height="190" border="0" /></a></div>
-                            <div class="text">
-                              <h3 style="font-weight:bold">Feature 6</h3>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales metus id mi suscipit ut ullamcorper lectus congue. Ut a massa volutpat ipsum tempor auctor faucibus eget arcu.</p>
-                              <p><a href="#" target="_blank" class="link_button">more</a></p>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                    <!-- end 2-->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="main_box_bg_right"></div>
-        </div>
-        <!-- end main box background -->
-        <!--start under animation-->
-        <div class="spacer_animation" id="spacer_animation_city">
-          <div class="spacer_animation_bg"></div>
-          <div class="spacer_animation_parts">
-            <div class="spacer_animation_part1"></div>
-            <div class="spacer_animation_part2"></div>
-            <div class="spacer_animation_part3"></div>
-          </div>
-        </div>
-        <!--end under animation-->
-      </div>
-      <!--end features box-->
+ 
       <!--end screenshot box-->
       <div class="spacer_graphic4"></div>
 

@@ -14,6 +14,10 @@ class CheckoutController {
         def email = params.email
         def firstName = params.firstName
         def lastName = params.lastName
+        def address1 = params.address1
+        def address2 = params.address2
+        def city = params.city
+        def zip = params.zip
 
         if(!firstName || !lastName){
             response.status = 500
@@ -22,18 +26,21 @@ class CheckoutController {
             render errorResponse as JSON
         }else {
 		log.info 'amountInCents = ${amountInCents}'
+        String desc = "email:${email} signed up for delivery at ${address1} ${address2} ${city} ${zip}"
         def chargeParams = [
             'amount': amountInCents, 
             'currency': 'usd', 
             'card': params.stripeToken,
-            'description': 'customer@sample.org'
+            'description': desc
         ]
 
         def status
         try {
             Charge charge = Charge.create(chargeParams)
             status = 'Your purchase was successful.'
-            PurchaseRecord purchaseRecord = new PurchaseRecord(firstName:firstName,lastName:lastName, stipeId:charge.getId(),email:email,description: "Test description",purchaseDate: new Date())
+            PurchaseRecord purchaseRecord = 
+            new PurchaseRecord
+            (firstName:firstName,lastName:lastName,address1:address1,address2:address2,city:city,zip:zip, stripeId:charge.getId(),email:email,description: desc,purchaseDate: new Date())
             if(!purchaseRecord.save()){
                 log.info "Error saving purchase record"
                 purchaseRecord.errors.each { print it }
@@ -43,7 +50,6 @@ class CheckoutController {
 	        log.info ('somthing with wrong', ex  )
             status = 'There was an error processing your credit card. Please contact support at support@rolldelivered.com'
             response.status = 500
-            //redirect(uri:'/',params: [msg:status,error:true])//        chain  action:'index',model: [message:status]
         }
 
 		log.info 'status is ${status}'
