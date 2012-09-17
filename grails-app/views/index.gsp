@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>RD-Sandbox</title>
+  <title>RollDelivered</title>
   <link rel="stylesheet" href="css/styles.css" type="text/css" />
   <link rel="stylesheet" href="css/eco.css" type="text/css" />
   <link href="css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
@@ -12,12 +12,7 @@
   <link rel="stylesheet" href="php/widget-rating.php?css" type="text/css" />
   <!-- star rating css -->
   <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
-  <script type="text/javascript" src="js/jquery.lightbox-0.5.pack.js"></script>
-  <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-  <script type="text/javascript" src="js/dtbaker_slider_links.js"></script>
-  <script type="text/javascript" src="js/dtbaker_slider.js"></script>
-  <script type="text/javascript" src="js/dtbaker_animation.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+
   <script src="js/jquery.validate.min.js"></script>
   <script src="js/spin.min.js"></script>
 
@@ -64,8 +59,6 @@
             .closest('.control-group').addClass('success');
         }
       });
-
-
 
 
 
@@ -460,7 +453,8 @@
                         </div>
                     </div>
                       <span class="note">
-                        Your credit card details will be securely sent directly to our payment processor.
+                        Your credit card details will be securely sent directly to our payment processor.                                <a href="http://www.stripe.com">Stripe.com</a>
+
                       </span>
                     </div>
 
@@ -542,30 +536,14 @@
                             <!--side box-->
                             <div class="side_box_thin">
                               <!--search-->
-                              <div class="search_box_container">
-                                <form action="search.php" method="get" name="search">
-                                  <input name="search" type="text" class="field" id="search_box2" />
-                                  <input name="Search" type="submit" class="sbutton" value="search" />
-                                </form>
-                              </div>
+                              
                               <!--end search-->
                             </div>
                             <!--end side box thin-->
                             <!--form-->
                             <div class="side_form">
-                              <h3 class="blue">Send us a question:</h3>
-                              <form action="formsubmit.php" method="post">
-                                <fieldset id="small_form">
-                                  <label for="support_name">Name:</label>
-                                  <input name="name" type="text" class="forms_small" id="support_name" size="26" />
-                                  <label for="support_email">Email:</label>
-                                  <input name="email" type="text" class="forms_small" id="support_email" size="26" />
-                                  <label for="support_message">Message:</label>
-                                  <textarea name="message" cols="18" rows="4" class="forms_small textarea" id="support_message"></textarea>
-                                  <br class="clear"/>
-                                  <input name="submit" type="submit" id="submit" class="submit_button" value="submit" />
-                                </fieldset>
-                              </form>
+                              <h3 class="blue">Have we not anwereed all your questions?:</h3>
+                                <a href="mailto:imran@rolldelivered.com">Email us!</a>
                             </div>
                             <!--end form-->
                           </div>

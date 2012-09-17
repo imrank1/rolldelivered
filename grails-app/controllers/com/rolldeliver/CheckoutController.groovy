@@ -75,6 +75,31 @@ def res = [:]
 //        redirect(action: "index", params: [msg: status])
     }
 
+    def message() {
+        def name = params.name
+        def email = params.email
+        def message = params.message
+
+         try{
+        sendMail  {
+            to "${email}"
+            subject "Support Question from ${name}"
+            body "${message}"
+        }}catch(Exception ex){
+            log.info "Failed to send support email from ${email}"
+            Errors error = new Errors(message:"Failed to send support email from ${email}",date:new Date())
+            error.save()
+             def errorMap = [:]
+             errorMap.error = true
+            response.status = 500
+            render errorMap as JSON
+        }
+
+        def res = [:]
+        res.success = true
+        render res as JSON
+    }
+
     def confirmation(String msg) {
         render(view:"/",msg: msg)
     }
