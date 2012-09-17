@@ -468,7 +468,7 @@
                       <button type="submit" id="submit-button" class="btn-primary submit-button">Register!</button>
                     </div>
                   </form>
-<div class="alert alert-success" id="successMessage"> Awesome! You're all signed up! Look for an email from us shortly!
+<div class="alert alert-success"  style="display:none;" id="successMessage"> Awesome! You're all signed up! Look for an email from us shortly!
                 </div>
                 <div class="alert alert-error"
                    <p id="errorMessage" class="alert alert-error" style="display: none">Hmm somthing went wrong! Check the fields above or contact support at support@rolldelivered.com</p>
