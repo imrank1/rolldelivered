@@ -16,6 +16,7 @@
 
 
 	body {
+
 		background-position:top left;
 		background-repeat:repeat;
 		margin:0px;
@@ -23,6 +24,7 @@
 		font-family: 'Droid Sans', Arial, Helvetica, sans-serif;
 		font-size:13px;
 		line-height:1.5em;
+
 	}
 	a, a:link, a:visited {
 		outline: none; /*gets rid of dotted select lines after clicking an image link*/
@@ -43,6 +45,8 @@
 		width:100%;
 		min-height:112px;
 		padding-top:112px;
+		background-color:#66ccff;
+	color:#317eac;
 	}
 	#wrapper {
 		width:980px;
