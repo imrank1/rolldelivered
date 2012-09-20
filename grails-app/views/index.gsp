@@ -68,6 +68,9 @@
   Stripe.setPublishableKey('pk_07vkx4yqszys5bnTNnHPSAAimkCie');
 
   $(document).ready(function() {
+      window.spinnertarget = document.getElementById('spinnerContainer');
+      window.spinner = new Spinner();
+
 //      $("#payment-form").validate({
 //         submitHandler: function(form) {
 //       debugger;
@@ -84,12 +87,33 @@
 //         return false;
 //         }
 //      });
+//      var opts = {
+//        lines: 13, // The number of lines to draw
+//        length: 7, // The length of each line
+//        width: 4, // The line thickness
+//        radius: 10, // The radius of the inner circle
+//        corners: 1, // Corner roundness (0..1)
+//        rotate: 0, // The rotation offset
+//        color: '#000', // #rgb or #rrggbb
+//        speed: 1, // Rounds per second
+//        trail: 60, // Afterglow percentage
+//        shadow: false, // Whether to render a shadow
+//        hwaccel: false, // Whether to use hardware acceleration
+//        className: 'spinner', // The CSS class to assign to the spinner
+//        zIndex: 2e9, // The z-index (defaults to 2000000000)
+//        top: 'auto', // Top position relative to parent in px
+//        left: 'auto' // Left position relative to parent in px
+//      };
 
 
 
 //
     $("#payment-form").submit(function(event) {
       if($("#payment-form").valid()){
+      window.spinner.spin();
+      window.spinnertarget.appendChild(spinner.el);
+
+      $("#paymentErrorMessage").hide("slow");
       $("#errorMessage").hide("slow");
       $("#successMessage").hide("slow");
         // disable the submit button to prevent repeated clicks
@@ -116,17 +140,15 @@
 
   function stripeResponseHandler(status, response) {
     if (response.error) {
+        window.spinner.stop();
+
         // show the errors on the form
-        $(".payment_errors").text(response.error.message);
+        $("#paymentErrorMessage").show("slow");
         $(".submit-button").removeAttr("disabled");
       } else {
         var form$ = $("#payment-form");
-        // token contains id, last4, and card type
         var token = response['id'];
-        // insert the token into the form so it gets submitted to the server
-        //form$.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
-        // and submit
-        //form$.get(0).submit();
+
         var fName = $('#firstName').val();
         var lName = $('#lastName').val();
         var address1 = $('#address1').val();
@@ -142,6 +164,7 @@
           data: { firstName: fName,lastName:lName,email:e,stripeToken:token,address1:address1,address2:address2,city:city,zip:zip },
           cache: false,
           success: function(){
+            window.spinner.stop();
             $("#successMessage").show("slow");
             $(".submit-button").removeAttr("disabled");
           },
@@ -393,26 +416,31 @@
                     </div>
 
                   </div>
-
                   <input type="checkbox" id="termsOfServiceCheck" disabled="disabled" name="termsOfServiceCheck" checked> I Agree to the <a href="checkout/terms">Terms of Service</a>
+                  <p>
 
 
                   %{--<a href="checkout/privacy">Check out our Privacy Policy</a>--}%
 
-                  <div class="actions">
-                      <button type="submit" class="btn btn-primary submit-button">Submit Payment</button>
+                  <div class="actions" style="clear:none;">
+                      %{--<div style="float:left;width:50%;">--}%
 
-                    %{--<input class="btn btn-primary submit-button" type="submit" value="Sign up Now!" /> (Payment Info Sent Directly to <a href="http://www.stripe.com">Stripe.com</a>)--}%
+                      <span><button type="submit" class="btn btn-primary submit-button " ">Sign up Now!</button>
+                      %{--</div>--}%
+                      <div id="spinnerContainer" style="float:right; width:65%; margin-top:16px"></div>
+                      <span>
                   </div>
-                  <span class="payment_errors"></span>
+                  %{--<span class="payment_errors"></span>--}%
                 </g:form>
 
 
 
                 <div class="alert alert-success" style="display:none;" id="successMessage"> Awesome! You're all signed up! Look for an email shortly!
                 </div>
-                <div class="alert alert-error" id="errorMessage" class="alert alert-error" style="display:none;">Hmm somthing went wrong! Check the fields above or contact support at support@rolldelivered.com.</p>
-              </div>
+                <div class="alert alert-error" id="errorMessage" class="alert alert-error" style="display:none;">Hmm something went wrong on our end processing your registration! Please try again or contact support at support@rolldelivered.com.</p> </div>
+                <div class="alert alert-error" id="paymentErrorMessage" class="alert alert-error" style="display:none;">Hmm something went wrong processing your credit card! Check the fields above or contact support at support@rolldelivered.com.</p>
+
+                </div>
             </fieldset>
           </div>
 
