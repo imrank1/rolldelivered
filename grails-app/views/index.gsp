@@ -46,10 +46,6 @@
        zip: {
          required: true,
          minlength: 5
-       },
-       termsOfServiceCheck:{
-          required:true,
-          checkbox:true
        }
 
      },
@@ -93,7 +89,6 @@
 
 //
     $("#payment-form").submit(function(event) {
-      debugger;
       if($("#payment-form").valid()){
       $("#errorMessage").hide("slow");
       $("#successMessage").hide("slow");
@@ -141,7 +136,6 @@
 
 
         var e = $('#email').val();
-        debugger;
         $.ajax({
           url: 'checkout/charge',
           type: 'post',
@@ -400,7 +394,7 @@
 
                   </div>
 
-                    <input type="checkbox" id="termsOfServiceCheck" name="termsOfServiceCheck"> I Agree to the <a href="checkout/terms">Terms of Service</a>
+                  <input type="checkbox" id="termsOfServiceCheck" disabled="disabled" name="termsOfServiceCheck" checked> I Agree to the <a href="checkout/terms">Terms of Service</a>
 
 
                   %{--<a href="checkout/privacy">Check out our Privacy Policy</a>--}%
