@@ -10,18 +10,18 @@
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css' />
   <!-- star rating css -->
   <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
-
   <script src="js/jquery.validate.min.js"></script>
+
   <script src="js/spin.min.js"></script>
 
 
   <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
-  <script type="text/javascript">
-  Stripe.setPublishableKey('pk_07vkx4yqszys5bnTNnHPSAAimkCie');
 
+  <script type="text/javascript">
   $(document).ready(function() {
 
-    $('#payment-form').validate({
+    $('#payment-form').validate(
+    {
       rules: {
         firstName: {
           minlength: 2,
@@ -29,70 +29,102 @@
         },
         lastName: {
           minlength: 2,
-          required: true
+          required:true
         },
         email: {
-          required: true,
+          required: 2,
           email: true
         },
-        emailConfirmation: {
-          required: true,
-          email: true
-        },
-        ccnumber: {
-          required: true,
-          creditcard:true
-        },
-        cvv: {
-          minlength: 3,
-          required: true
-        },
-        termsOfService:{
+        address1: {
+         required: true,
+         minlength:2
+       },
+       city: {
+         required: true,
+         minlength: 2
+       },
+       zip: {
+         required: true,
+         minlength: 5
+       },
+       termsOfServiceCheck:{
+          required:true,
           checkbox:true
-          required:true
-        }
+       }
 
-      },
-      highlight: function(label) {
-        $(label).closest('.control-group').addClass('error');
-      },
-      success: function(label) {
-        label
-        .text('OK!').addClass('valid')
-        .closest('.control-group').addClass('success');
-      }
-    });
+     },
+     highlight: function(label) {
+      $(label).closest('.control-group').addClass('error');
+
+    },
+    success: function(label) {
+      label
+      .text('OK!').addClass('valid')
+      .closest('.control-group').addClass('success');
+
+    }
+  });
+  });
+
+  </script>
+
+  <script type="text/javascript">
+  Stripe.setPublishableKey('pk_07vkx4yqszys5bnTNnHPSAAimkCie');
+
+  $(document).ready(function() {
+//      $("#payment-form").validate({
+//         submitHandler: function(form) {
+//       debugger;
+//       $("#errorMessage").hide("slow");
+//       $("#successMessage").hide("slow");
+//         // disable the submit button to prevent repeated clicks
+//         $('.submit-button').attr("disabled", "disabled");
+//         Stripe.createToken({
+//           number: $('.card-number').val(),
+//           cvc: $('.card-cvc').val(),
+//           exp_month: $('.card-expiry-month').val(),
+//           exp_year: $('.card-expiry-year').val()
+//         }, stripeResponseHandler);
+//         return false;
+//         }
+//      });
 
 
 
+//
     $("#payment-form").submit(function(event) {
+      debugger;
+      if($("#payment-form").valid()){
       $("#errorMessage").hide("slow");
       $("#successMessage").hide("slow");
         // disable the submit button to prevent repeated clicks
         $('.submit-button').attr("disabled", "disabled");
-
         Stripe.createToken({
           number: $('.card-number').val(),
           cvc: $('.card-cvc').val(),
           exp_month: $('.card-expiry-month').val(),
           exp_year: $('.card-expiry-year').val()
         }, stripeResponseHandler);
-
         // prevent the form from submitting with the default action
         return false;
+    }
       });
   });
-</script>
-<script type="text/javascript">
+  </script>
 
-function stripeResponseHandler(status, response) {
-  if (response.error) {
 
+
+
+
+
+  <script type="text/javascript">
+
+  function stripeResponseHandler(status, response) {
+    if (response.error) {
         // show the errors on the form
         $(".payment_errors").text(response.error.message);
         $(".submit-button").removeAttr("disabled");
       } else {
-
         var form$ = $("#payment-form");
         // token contains id, last4, and card type
         var token = response['id'];
@@ -109,12 +141,13 @@ function stripeResponseHandler(status, response) {
 
 
         var e = $('#email').val();
+        debugger;
         $.ajax({
           url: 'checkout/charge',
           type: 'post',
           data: { firstName: fName,lastName:lName,email:e,stripeToken:token,address1:address1,address2:address2,city:city,zip:zip },
           cache: false,
-          success: function(){ 
+          success: function(){
             $("#successMessage").show("slow");
             $(".submit-button").removeAttr("disabled");
           },
@@ -127,54 +160,9 @@ function stripeResponseHandler(status, response) {
       }
     }
     </script>
-    <script type="text/javascript"> //google analytics
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-34220335-1']);
-    _gaq.push(['_setDomainName', 'doughly.com']);
-    _gaq.push(['_setAllowLinker', true]);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-    </script>
 
 
 
-
-    <script type="text/javascript">
-    <!-- js friendly fallback for animations -->
-    document.write(unescape('%3Cstyle type="text/css"%3E.spacer_animation .spacer_animation_parts div{ margin-top:400px; }%3C/style%3E'));
-    document.write(unescape('%3Cstyle type="text/css"%3E.main_box_background .main_box_bg_left{ margin-left:0px; }%3C/style%3E'));
-    document.write(unescape('%3Cstyle type="text/css"%3E.main_box_background .main_box_bg_right{ margin-left:475px;margin-top:-438px; }%3C/style%3E'));
-    $(function() {
-      $('.spacer_animation').each(function(){
-       var foo = new anim_scroller();
-       foo.init_popup(this);
-       anim_scrollers.push(foo);
-     });
-
-       // this starts the "portfolio" sideways scroller.
-        // create a new one of these for each sideways scroller you would like to have.
-        // new dtbaker_scroller('portfolio_slider');
-        new dtbaker_simpleCart({
-			'id': 'buy_now', // unique id for this product. don't change this.
-			'paypal': 'dtbaker@gmail.com', // change to false to disable paypal
-			'google': '251134918603076', // change to false to disable google
-			'email': true, // allow the email method
-			'flat_rate': false, // change to false to charge shipping per item
-			'shipping_rate': 0, // shipping rate is controlled by the drop down on order form.
-			'product_name': 'TP Box from Roll Delivered',
-			'product_price': 9.99,
-			'currency': USD,
-			'thank_you_url': 'thank_you.html'
-		});
-      });
-    </script>
   </head>
   <body>
     <div id="fixed_header">
@@ -197,7 +185,6 @@ function stripeResponseHandler(status, response) {
       <div id="wrapper">
         <div class="main_box_wrapper" id="home_pag" style="padding-top:0;">
           <div class="main_box_background"> <!-- start box background -->
-            <div class="main_box_bg_left"></div>
 
             <!--home box-->
             <div class="main_box" id="section1">
@@ -231,26 +218,14 @@ function stripeResponseHandler(status, response) {
         </div>
       </div>
       <!--end home box-->
-      <div class="main_box_bg_right"></div>
     </div>
     <!-- end main box background -->
   </div>
 
-  <!--start under animation-->
-  <div class="spacer_animation" id="spacer_animation_rocks">
-    <div class="spacer_animation_bg"></div>
-    <div class="spacer_animation_parts">
-      <div class="spacer_animation_part1"></div>
-      <div class="spacer_animation_part2"></div>
-      <div class="spacer_animation_part3"></div>
-    </div>
-  </div>
-  <!--end under animation-->
 
   <!--buy now box-->
   <div class="main_box_wrapper" id="buy_now">
     <div class="main_box_background"> <!-- start box background -->
-      <div class="main_box_bg_left"></div>
       <div class="main_box">
         <div class="content">
           <div class="two_column_wrapper">
@@ -286,178 +261,175 @@ function stripeResponseHandler(status, response) {
               <p>Enter your details to order and Simplify Your Life.</p>
               <div class="span6 columns">
                 <fieldset>
- 
+
+                  <g:form url="checkout/charge" id="payment-form" useToken="true">
+                  <div class="clearfix control-group">
+                    <label class="control-label" for="firstName">First Name</label>
+                    <div class="input">
+                      <input class="field" id="firstName" name="firstName" size="30" type="text" />
+                    </div>
+                  </div>
+
+                  <div class="clearfix control-group">
+                   <label class="control-label" for="lastName">Last Name</label>
+                   <div class="input">
+                     <input class="field" id="lastName" name="lastName" size="30" type="text" />
+                   </div>
+                 </div>
 
 
-<g:form  useToken="true" controller="checkout" action="charge" id="payment-form">
-
-<div class="clearfix">
-  <label for="user_name">First Name</label>
-  <div class="input">
-    <input class="field" id="firstName" size="30" type="text" />
-  </div>
-</div>
-
-<div class="clearfix">
-  <label for="user_name">Last Name</label>
-  <div class="input">
-    <input class="field" id="firstName" size="30" type="text" />
-  </div>
-</div>
 
 
-<div class="clearfix">
-  <label for="user_email">Email</label>
-  <div class="input">
-    <input class="field" id="user_email" name="user[email]" size="30" type="text" />
-  </div>
-</div>
+                 <div class="clearfix control-group">
+                  <label class="control-label" for="email">Email</label>
+                  <div class="input">
+                    <input class="field" id="email" name="email" size="30" type="text" />
+                  </div>
+                </div>
 
-<div class="clearfix">
-</div>
+                <div class="clearfix">
+                </div>
 
-<div class="clearfix">
-
-
-  <input id="stripeToken" name="stripeToken" type="hidden" />
-</div>
+                <div class="clearfix">
 
 
-<noscript>
-  <p>This form requires Javascript to use</p>
-</noscript>
+                  <input id="stripeToken" name="stripeToken" type="hidden" />
+                </div>
 
-<div id="credit-card" style="display:block">
-  <div id="credit-card-errors" style="display:none">
-    <div id="stripe-error-message" class="alert-message block-message error">
+
+                <noscript>
+                  <p>This form requires Javascript to use</p>
+                </noscript>
+
+                <div id="credit-card" style="display:block">
+                  <div id="credit-card-errors" style="display:none">
+                    <div id="stripe-error-message" class="alert-message block-message error">
+                    </div>
+                  </div>
+
+                  <div class="clearfix control-group">
+                    <label class="control-label" for="creditCardNumber">Credit Card Number
+                      <div class="input">
+                        <input class="field card-number"  type="text" />
+                      </div>
+                    </div>
+
+                    <div class="clearfix control-group">
+                      <label class="control-label" for="cvv">Security code (CVV)</label>
+                      <div class="input">
+                        <input class="input-small card-cvc"  id="cvv" type="text" />
+                      </div>
+                    </div>
+
+                    <div class="clearfix control-group">
+                      <label class="control-label" for="card-expiry-month">Expiry Date</label>
+                      <div class="input">
+                        <select class="input-small card-expiry-month">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option selected="selected" value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                        </select>
+                        <select class="input-small card-expiry-year">
+                          <option selected="selected" value="2012">2012</option>
+                          <option value="2013">2013</option>
+                          <option value="2014">2014</option>
+                          <option value="2015">2015</option>
+                          <option value="2016">2016</option>
+                          <option value="2017">2017</option>
+                          <option value="2018">2018</option>
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                          <option value="2022">2022</option>
+                          <option value="2023">2023</option>
+                          <option value="2024">2024</option>
+                          <option value="2025">2025</option>
+                          <option value="2026">2026</option>
+                          <option value="2027">2027</option>
+                          <option value="2028">2028</option>
+                          <option value="2029">2029</option>
+                          <option value="2030">2030</option>
+                          <option value="2031">2031</option>
+                          <option value="2032">2032</option>
+                          <option value="2033">2033</option>
+                          <option value="2034">2034</option>
+                          <option value="2035">2035</option>
+                          <option value="2036">2036</option>
+                          <option value="2037">2037</option>
+                        </select>
+                        <div class="control-group">
+                          <label class="control-label" for="address1">Address</label>
+                          <div class="input">
+                            <input class="field " id="address1" name="address1" type="text" />
+                          </div>
+                        </div>
+
+                        <div class="control-group">
+                          <label class="control-label" for="address2">Additional Address Info (Optional) </label>
+                          <div class="input">
+                            <input class="field " id="address2"  type="text" />
+                          </div>
+                        </div>
+
+                        <div class="control-group">
+                          <label class="control-label" for="city">City </label>
+                          <div class="input">
+                            <input class="field " id="city" name="city" type="text" />
+                          </div>
+                        </div>
+
+
+                        <div class="control-group">
+                          <label class="control-label" for="zip">Zip Code </label>
+                          <div class="input">
+                            <input class="field " id="zip" name="zip" type="text" />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- empty -->
+                    </div>
+
+                  </div>
+
+                    <input type="checkbox" id="termsOfServiceCheck" name="termsOfServiceCheck"> I Agree to the <a href="checkout/terms">Terms of Service</a>
+
+
+                  %{--<a href="checkout/privacy">Check out our Privacy Policy</a>--}%
+
+                  <div class="actions">
+                      <button type="submit" class="btn btn-primary submit-button">Submit Payment</button>
+
+                    %{--<input class="btn btn-primary submit-button" type="submit" value="Sign up Now!" /> (Payment Info Sent Directly to <a href="http://www.stripe.com">Stripe.com</a>)--}%
+                  </div>
+                  <span class="payment_errors"></span>
+                </g:form>
+
+
+
+                <div class="alert alert-success" style="display:none;" id="successMessage"> Awesome! You're all signed up! Look for an email shortly!
+                </div>
+                <div class="alert alert-error" id="errorMessage" class="alert alert-error" style="display:none;">Hmm somthing went wrong! Check the fields above or contact support at support@rolldelivered.com.</p>
+              </div>
+            </fieldset>
+          </div>
+
+
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!--end two_column_wrapper-->
     </div>
   </div>
-
-  <div class="clearfix">
-    <label for="credit_card_number">Credit card number</label>
-    <div class="input">
-      <input class="field card-number"  type="text" />
-    </div>
-  </div>
-
-  <div class="clearfix">
-    <label for="cvv">Security code (CVV)</label>
-    <div class="input">
-      <input class="input-small card-cvc"  id="cvv" type="text" />
-    </div>
-  </div>
-
-  <div class="clearfix">
-    <label for="expiry_date">Expiry date</label>
-    <div class="input">
-      <input  type="hidden" value="1" />
-      <select class="input-small" class="card-expiry-month">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option selected="selected" value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-      </select>
-      <select class="input-small card-expiry-year">
-        <option selected="selected" value="2012">2012</option>
-        <option value="2013">2013</option>
-        <option value="2014">2014</option>
-        <option value="2015">2015</option>
-        <option value="2016">2016</option>
-        <option value="2017">2017</option>
-        <option value="2018">2018</option>
-        <option value="2019">2019</option>
-        <option value="2020">2020</option>
-        <option value="2021">2021</option>
-        <option value="2022">2022</option>
-        <option value="2023">2023</option>
-        <option value="2024">2024</option>
-        <option value="2025">2025</option>
-        <option value="2026">2026</option>
-        <option value="2027">2027</option>
-        <option value="2028">2028</option>
-        <option value="2029">2029</option>
-        <option value="2030">2030</option>
-        <option value="2031">2031</option>
-        <option value="2032">2032</option>
-        <option value="2033">2033</option>
-        <option value="2034">2034</option>
-        <option value="2035">2035</option>
-        <option value="2036">2036</option>
-        <option value="2037">2037</option>
-      </select>
-      <div class="control-group"> 
-        <label for="address1">Address</label>
-        <div class="input">
-          <input class="field " id="address1" type="text" />
-        </div>
-      </div>
-
-      <div class="control-group"> 
-        <label for="address2">Additional Address Info (Optional) </label>
-        <div class="input">
-          <input class="field " id="address2"  type="text" />
-        </div>
-      </div>
-
-      <div class="control-group"> 
-        <label for="city">City </label>
-        <div class="input">
-          <input class="field " id="city" type="text" />
-        </div>
-      </div>
-
-
-      <div class="control-group"> 
-        <label for="zip">Zip Code </label>
-        <div class="input">
-          <input class="field " id="zip" type="text" />
-        </div>
-      </div>
-    </div>
-    <!-- empty -->
-  </div>
-
-</div>
-
-  <label class="checkbox">
-    <input type="checkbox" id="termsOfServiceCheck"> I Agree to the <a href="/termsOfService">Terms of Service</a>
-  </label>
-
-<div class="actions">
-  <input class="btn btn-primary submit-button" type="submit" value="Sign up Now!" /> (Payment Info Sent Directly to <a href="http://www.stripe.com">Stripe.com</a>)
-</div>
-
-
-</g:form>
-
-
-
-
-<div class="alert alert-success" style="display:none;" id="successMessage"> Awesome! You're all signed up! Look for an email shortly!
-</div>
-<div class="alert alert-error"
-<p id="errorMessage" class="alert alert-error" style="display:none;">Hmm somthing went wrong! Check the fields above or contact support at support@rolldelivered.com.</p>
-</div>
-</fieldset>
-</div>
-  
-
-</div>
-<div class="clear"></div>
-</div>
-<!--end two_column_wrapper-->
-</div>
-</div>
-<div class="main_box_bg_right"></div>
-<!-- end main box background --> </div>
+  <!-- end main box background --> </div>
 </div>
 <!--end buy now box-->
 
@@ -480,7 +452,6 @@ function stripeResponseHandler(status, response) {
 <!--contact box-->
 <div class="main_box_wrapper" id="support">
   <div class="main_box_background"> <!-- start box background -->
-    <div class="main_box_bg_left"></div>
     <div class="main_box">
       <div class="content">
         <div class="content_left">
@@ -531,7 +502,6 @@ function stripeResponseHandler(status, response) {
                     <div class="clear"></div>
                   </div>
                 </div>
-                <div class="main_box_bg_right"></div>
               </div>
               <!-- end main box background -->
             </div>
@@ -541,7 +511,6 @@ function stripeResponseHandler(status, response) {
             <!--contact box-->
             <div class="main_box_wrapper" id="about">
               <div class="main_box_background"> <!-- start box background -->
-                <div class="main_box_bg_left"></div>
                 <div class="main_box">
                   <div class="content">
                     <h1>About Us</h1>
@@ -571,18 +540,10 @@ function stripeResponseHandler(status, response) {
                       </div>
                       <!--end right half-->
                     </div>
-                    <div class="main_box_bg_right"></div>
                   </div>
                   <!-- end main box background -->
                   <!--start under animation-->
-                  <div class="spacer_animation" id="spacer_animation_rain">
-                    <div class="spacer_animation_bg"></div>
-                    <div class="spacer_animation_parts">
-                      <div class="spacer_animation_part1"></div>
-                      <div class="spacer_animation_part2"></div>
-                      <div class="spacer_animation_part3"></div>
-                    </div>
-                  </div>
+                  
                   <!--end under animation-->
                 </div>
                 <!--end contact box-->

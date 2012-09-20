@@ -9,6 +9,14 @@ import com.rolldeliver.Errors
 import grails.converters.JSON;
 class CheckoutController {
 
+    def terms() {
+        render(view: "terms")
+    }
+
+    def privacy() {
+        render(view:"privacyPolicy")
+    }
+    
 	def charge()  {
         Stripe.apiKey = 'sk_07vkIYtFhTJY68s2pipRKmlvDtiqk'
         def amountInCents = (100 * 100) as Integer
