@@ -1,4 +1,3 @@
-
 <!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -516,7 +515,7 @@
                       <!--end side box thin-->
                       <!--form-->
                       <div class="side_form">
-                        <h3 class="blue">Have we not anwereed all your questions?:</h3>
+                        <h3 class="blue">Have we not answered all your questions?:</h3>
                         <a href="mailto:imran@rolldelivered.com">Email us!</a>
                       </div>
                       <!--end form-->
@@ -539,9 +538,11 @@
                     <h3>We built Roll Delivered to bring you peace of mind. We are taking the hassle out of buying, transporting and storing bulky bathroom rolls to give you simplicity you can rely on. We are committed to our customers and welcome your comments or concerns!<br></br></h3>
                     <div class="half_column_left">
                       <h3>The Founders:</h3>
-                      <div class="founders"><img src="images/imran.jpg" alt="Imran Khawaja" width="140" height="140" border="1.5"/><div class="text">Imran Khawaja</div></div>
+                      <div class="founders"><img src="images/imran.jpg" alt="Imran Khawaja" width="140" height="140" border="1.5"/><div class="text">Imran Khawaja<br>
+                      Coding Guru, JHU CS</br></div></div>
                       <div class="founders"><img src="images/fhmalik.jpg" alt="FH Malik" width="140" height="140" border="1.5"/><div class="text">FH Malik<br>
-                        <a href="http://www.twitter.com/fhnama/">@fhnama</a></br></div></div>
+                      <p>former consultant, financier and tp enthusiast</p>
+                      <a href="http://www.twitter.com/fhnama/">@fhnama</a></br></div></div>
                       </div>
                       <!--end left half-->
                       <div class="half_column_right">
