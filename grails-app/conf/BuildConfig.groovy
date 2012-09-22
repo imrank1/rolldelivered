@@ -42,6 +42,10 @@ grails.project.dependency.resolution = {
         runtime ":resources:1.1.5"
 
         build ":tomcat:$grailsVersion"
+
+
+        compile ':spring-security-core:1.2.7.3'
+   compile ':webxml:1.4.1'
         compile(':heroku:1.0.1') {
         exclude 'database-session'
         }
