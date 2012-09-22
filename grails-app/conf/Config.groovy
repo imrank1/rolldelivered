@@ -126,7 +126,7 @@ mail {
 }
 
 grails.plugins.springsecurity.secureChannel.definition = [
-   '/':         'REQUIRES_SECURE_CHANNEL',
+   '/**':         'REQUIRES_SECURE_CHANNEL',
    '/images/**':        'ANY_CHANNEL',
    '/css/**':        'ANY_CHANNEL',
   '/js/**':        'ANY_CHANNEL'
