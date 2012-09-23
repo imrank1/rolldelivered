@@ -10,12 +10,9 @@ import grails.converters.JSON;
 class CheckoutController {
 
     def index() {
-
-        String requestURL =  request.getRequestURL()
-        String [] parsed  = requestURL.split(':')
-        String ssl= parsed[0]
-
-        if(!ssl.equals("https")){
+        String scheme = request.getScheme()
+        println "scheme is $scheme"
+        if(!scheme.equals("https")){
             println "Redirecting to https"
             redirect(url:"https://www.rolldelivered.com")
         } else{
