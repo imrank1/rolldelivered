@@ -2,13 +2,21 @@ package com.rolldeliver
 
 
 import com.stripe.model.Charge
-import com.stripe.exception.CardException
+
 import com.stripe.Stripe
 import rolldeliver.PurchaseRecord
-import com.rolldeliver.Errors
+
 import grails.converters.JSON;
 class CheckoutController {
 
+    def index() {
+        if(!request.isSecure()){
+            redirect(url:"https://www.rolldelivered.com")
+        } else{
+        render(view: "index")
+        }
+    }
+    
     def terms() {
         render(view: "terms")
     }
