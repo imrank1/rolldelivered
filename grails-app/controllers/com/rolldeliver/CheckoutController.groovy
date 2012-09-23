@@ -14,6 +14,7 @@ class CheckoutController {
         println "scheme is $scheme"
         
         String proto = request.getHeader('X-Forwarded-Proto')
+        println "proto is $proto"
         if(!proto.equals("https")){
             println "Redirecting to https"
             redirect(url:"https://www.rolldelivered.com")
