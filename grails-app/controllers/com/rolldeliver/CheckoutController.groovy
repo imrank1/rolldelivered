@@ -10,7 +10,12 @@ import grails.converters.JSON;
 class CheckoutController {
 
     def index() {
-        if(!request.isSecure()){
+
+        String requestURL =  request.getRequestURL()
+        String [] parsed  = requestURL.split(':')
+        String ssl= parsed[0]
+
+        if(!ssl.equals("https")){
             redirect(url:"https://www.rolldelivered.com")
         } else{
         render(view: "index")
