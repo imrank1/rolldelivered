@@ -7,9 +7,9 @@ class UrlMappings {
 			}
 		}
 
-       "/"(controller: 'checkout', action: 'index')
+//       "/"(controller: 'checkout', action: 'index')
 
-//		"/"(view:"/index")
+		"/"(view:"/index")
 		
 		
 		"500"(view:'/error')

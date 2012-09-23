@@ -8,19 +8,19 @@ import rolldeliver.PurchaseRecord
 
 import grails.converters.JSON;
 class CheckoutController {
-
-    def index() {
-        String scheme = request.getScheme()
-        println "scheme is $scheme"
-        if(!scheme.equals("https")){
-            println "Redirecting to https"
-            redirect(url:"https://www.rolldelivered.com")
-        } else{
-            println("getting index ( in https ) ")
-            render(view: "index")
-        }
-    }
-    
+//
+//    def index() {
+//        String scheme = request.getScheme()
+//        println "scheme is $scheme"
+//        if(!scheme.equals("https")){
+//            println "Redirecting to https"
+//            redirect(url:"https://www.rolldelivered.com")
+//        } else{
+//            println("getting index ( in https ) ")
+//            render(view: "index")
+//        }
+//    }
+//
     def terms() {
         render(view: "terms")
     }
