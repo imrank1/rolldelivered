@@ -16,9 +16,11 @@ class CheckoutController {
         String ssl= parsed[0]
 
         if(!ssl.equals("https")){
+            println "Redirecting to https"
             redirect(url:"https://www.rolldelivered.com")
         } else{
-        render(view: "index")
+            println("getting index ( in https ) ")
+            render(view: "index")
         }
     }
     
