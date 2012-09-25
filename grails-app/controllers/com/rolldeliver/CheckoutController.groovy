@@ -8,20 +8,37 @@ import rolldeliver.PurchaseRecord
 
 import grails.converters.JSON;
 class CheckoutController {
-
+//
     def index() {
         String scheme = request.getScheme()
         println "scheme is $scheme"
-        
-        String proto = request.getHeader('X-Forwarded-Proto')
+
+        String proto = request.getHeader("X-Forwarded-Proto")
         println "proto is $proto"
-        if(!proto.equals("https")){
-            println "Redirecting to https"
-            redirect(url:"https://www.rolldelivered.com")
-        } else{
-            println("getting index ( in https ) ")
-            render(view: "index")
-        }
+//        if(grails.util.Environment.getCurrent().equals(grails.util.Environment.PRODUCTION)){
+                if(!proto.equals("https")){
+                    println "Redirecting to https"
+                    redirect(url:"https://www.rolldelivered.com")
+                } else{
+
+                    render(view: "index")
+
+                }
+//        }
+//        else{
+//            println "Non production mode index"
+//            render(view: "index")
+//
+//        }
+//            println("getting index ( in https ) ")
+    }
+
+
+    def status (){
+        response.status = 200
+        def res = [:]
+        res.success = true
+        render res as JSON
     }
 
     def terms() {

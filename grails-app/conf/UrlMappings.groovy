@@ -9,6 +9,9 @@ class UrlMappings {
 
        "/"(controller: 'checkout', action: 'index')
 
+       "/status"(controller: 'checkout', action: 'status')
+
+
 //		"/"(view:"/index")
 		
 		
