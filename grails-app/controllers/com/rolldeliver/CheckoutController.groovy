@@ -79,8 +79,6 @@ class CheckoutController {
 
         def status
         try {
-            com.stripe.model.Subscription.crea
-
             Map<String, Object> customerParams = new HashMap<String, Object>();
             customerParams.put("description", desc);
             customerParams.put("card", params.stripeToken);

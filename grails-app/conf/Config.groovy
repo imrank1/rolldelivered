@@ -90,6 +90,7 @@ log4j = {
      debug 'grails.plugin.heroku',
          'grails.plugin.memcached',
          'grails.plugin.cloudsupport'
+         'com.rolldeliver'
 
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
            'org.codehaus.groovy.grails.web.pages', //  GSP
