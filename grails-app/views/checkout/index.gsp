@@ -5,13 +5,13 @@
   <title>Roll Delivered: Simple Hassle Free Toilet Paper Subscription</title>
   
 <g:if env="production">
-    <link rel="stylesheet" href="https://www.rolldelivered.com/static/css/styles.css" type="text/css" />
-  <link rel="stylesheet" href="https://www.rolldelivered.com/static/css/eco.css" type="text/css" />
-  <link href="https://www.rolldelivered.com/static/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://www.rolldelivered.com/css/styles.css" type="text/css" />
+  <link rel="stylesheet" href="https://www.rolldelivered.com/css/eco.css" type="text/css" />
+  <link href="https://www.rolldelivered.com/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css' />
   <!-- star rating css -->
-  <script type="text/javascript" src="https://www.rolldelivered.com/static/js/jquery-1.4.3.min.js"></script>
-  <script src="https://www.rolldelivered.com/static/js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="https://www.rolldelivered.com/js/jquery-1.4.3.min.js"></script>
+  <script src="https://www.rolldelivered.com/js/jquery.validate.min.js"></script>
 
   <script src="https://www.rolldelivered.com/static/js/spin.min.js"></script>
 
