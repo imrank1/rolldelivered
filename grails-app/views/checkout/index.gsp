@@ -12,7 +12,7 @@
   <script type="text/javascript" src="https://s3.amazonaws.com/rolldelivered-static/js/jquery-1.4.3.min.js"></script>
   <script src="https://s3.amazonaws.com/rolldelivered-static/js/jquery.validate.min.js"></script>
 
-  <script src="https://s3.amazonaws.com/rolldelivered-static/static/js/spin.min.js"></script>
+  <script src="https://s3.amazonaws.com/rolldelivered-static/js/spin.min.js"></script>
 
 
   
