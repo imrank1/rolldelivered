@@ -245,7 +245,7 @@
         <!--end left-->
         <div class="home_right">
           <div class="star">new</div>
-          <img src="images/home_image.png" width="400" height="430" alt="product" /></div>
+          <img src="https://s3.amazonaws.com/rolldelivered-static/images/home_image.png" width="400" height="430" alt="product" /></div>
           <!--end home right-->
         </div>
       </div>
@@ -267,7 +267,7 @@
               <div class="side_box">
                 <div class="top"></div>
                 <div class="content_middle" align="middle">
-                  <img src="images/eco/price_box.png" alt="$8.99 shipping and tax included" />
+                  <img src="https://s3.amazonaws.com/rolldelivered-static/images/eco/price_box.png" alt="$8.99 shipping and tax included" />
                   <p>Thats $0.004 per sheet.</p>
                   <div class="clear"></div>
                 </div>
@@ -278,7 +278,7 @@
               <div class="side_box">
                 <div class="top"></div>
                 <div class="content_middle" align="middle">
-                  <img src="images/premium_quality2.png" alt="Satisfaction Guaranteed"/>
+                  <img src="https://s3.amazonaws.com/rolldelivered-static/images/premium_quality2.png" alt="Satisfaction Guaranteed"/>
                   <p>Satisfaction Guaranteed</p>
                   <div class="clear"></div>
                 </div>
@@ -289,7 +289,7 @@
             </div>
             <div class="content_right">
               <div class="box_title"> Get Roll Delivered. Simplify Your Life. </div>
-              <p><img src="images/formheader.png" style="margin-top:15px;"/></p>
+              <p><img src="https://s3.amazonaws.com/rolldelivered-static/images/formheader.png" style="margin-top:15px;"/></p>
               <p>Enter your details to order and Simplify Your Life.</p>
               <div class="span6 columns">
                 <fieldset>
@@ -554,9 +554,9 @@
                     <h3>We built Roll Delivered to bring you peace of mind. We are taking the hassle out of buying, transporting and storing bulky bathroom rolls to give you simplicity you can rely on. We are committed to our customers and welcome your comments or concerns!<br></br></h3>
                     <div class="half_column_left">
                       <h3>The Founders:</h3>
-                      <div class="founders"><img src="images/imran.jpg" alt="Imran Khawaja" width="140" height="140" border="1.5"/><div class="text">Imran Khawaja<br>
+                      <div class="founders"><img src="https://s3.amazonaws.com/rolldelivered-static/images/imran.jpg" alt="Imran Khawaja" width="140" height="140" border="1.5"/><div class="text">Imran Khawaja<br>
                       Coding Guru, JHU CS</br></div></div>
-                      <div class="founders"><img src="images/fhmalik.jpg" alt="FH Malik" width="140" height="140" border="1.5"/><div class="text">FH Malik<br>
+                      <div class="founders"><img src="https://s3.amazonaws.com/rolldelivered-static/images/fhmalik.jpg" alt="FH Malik" width="140" height="140" border="1.5"/><div class="text">FH Malik<br>
                       <p>former consultant, financier and tp enthusiast</p>
                       <a href="http://www.twitter.com/fhnama/">@fhnama</a></br></div></div>
                       </div>
