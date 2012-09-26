@@ -3,16 +3,31 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Roll Delivered: Simple Hassle Free Toilet Paper Subscription</title>
-  <link rel="stylesheet" href="css/styles.css" type="text/css" />
-  <link rel="stylesheet" href="css/eco.css" type="text/css" />
-  <link href="css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+  
+<g:if env="production">
+    <link rel="stylesheet" href="https://www.rolldelivered.com/static/css/styles.css" type="text/css" />
+  <link rel="stylesheet" href="https://www.rolldelivered.com/static/css/eco.css" type="text/css" />
+  <link href="https://www.rolldelivered.com/static/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css' />
   <!-- star rating css -->
-  <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
-  <script src="js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="https://www.rolldelivered.com/static/js/jquery-1.4.3.min.js"></script>
+  <script src="https://www.rolldelivered.com/static/js/jquery.validate.min.js"></script>
 
-  <script src="js/spin.min.js"></script>
+  <script src="https://www.rolldelivered.com/static/js/spin.min.js"></script>
 
+</g:if>
+<<g:else>
+<link rel="stylesheet" href="/css/styles.css" type="text/css" />
+  <link rel="stylesheet" href="/css/eco.css" type="text/css" />
+  <link href="/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css' />
+  <!-- star rating css -->
+  <script type="text/javascript" src="/js/jquery-1.4.3.min.js"></script>
+  <script src="/js/jquery.validate.min.js"></script>
+
+  <script src="/js/spin.min.js"></script>
+</g:else>
+  
 
   <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
 
@@ -26,7 +41,7 @@
           minlength: 2,
           required: true
         },
-        lastName: {
+        lastName: {                                            PO
           minlength: 2,
           required:true
         },
@@ -579,7 +594,7 @@
                   </div>
                   <!-- end main box background -->
                   <!--start under animation-->
-
+                  
                   <!--end under animation-->
                 </div>
                 <!--end contact box-->
