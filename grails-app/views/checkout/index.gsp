@@ -16,7 +16,7 @@
   <script src="https://www.rolldelivered.com/static/js/spin.min.js"></script>
 
 </g:if>
-<<g:else>
+<g:else>
 <link rel="stylesheet" href="/css/styles.css" type="text/css" />
   <link rel="stylesheet" href="/css/eco.css" type="text/css" />
   <link href="/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
