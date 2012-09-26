@@ -6,7 +6,9 @@ import com.stripe.model.Charge
 import com.stripe.Stripe
 import rolldeliver.PurchaseRecord
 
-import grails.converters.JSON;
+import grails.converters.JSON
+import com.stripe.model.Subscription
+import com.stripe.model.Customer;
 class CheckoutController {
 //
     def index() {
@@ -77,11 +79,20 @@ class CheckoutController {
 
         def status
         try {
-            Charge charge = Charge.create(chargeParams)
+            com.stripe.model.Subscription.crea
+
+            Map<String, Object> customerParams = new HashMap<String, Object>();
+            customerParams.put("description", desc);
+            customerParams.put("card", params.stripeToken);
+            customerParams.put("plan","starter")
+            customerParams.put("email",email)// obtained with Stripe.js
+            Customer customer = Customer.create(customerParams);
+
+
             status = 'Your purchase was successful.'
             PurchaseRecord purchaseRecord = 
             new PurchaseRecord
-            (firstName:firstName,lastName:lastName,address1:address1,address2:address2,city:city,zip:zip, stripeId:charge.getId(),email:email,description: desc,purchaseDate: new Date())
+            (firstName:firstName,lastName:lastName,address1:address1,address2:address2,city:city,zip:zip, stripeId:customer.getId(),email:email,description: desc,purchaseDate: new Date())
             if(!purchaseRecord.save()){
                 log.info "Error saving purchase record"
                 purchaseRecord.errors.each { print it }
