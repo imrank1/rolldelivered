@@ -3,15 +3,15 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Roll Delivered: Simple Hassle Free Toilet Paper Subscription</title>
-  <link rel="stylesheet" href="/css/styles.css" type="text/css" />
-  <link rel="stylesheet" href="/css/eco.css" type="text/css" />
-  <link href="/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="//css/styles.css" type="text/css" />
+  <link rel="stylesheet" href="//css/eco.css" type="text/css" />
+  <link href="//css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css' />
   <!-- star rating css -->
-  <script type="text/javascript" src="/js/jquery-1.4.3.min.js"></script>
-  <script src="/js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="//js/jquery-1.4.3.min.js"></script>
+  <script src="//js/jquery.validate.min.js"></script>
 
-  <script src="/js/spin.min.js"></script>
+  <script src="//js/spin.min.js"></script>
 
 
   <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
