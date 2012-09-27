@@ -110,13 +110,13 @@ grails.plugins.stripe.secretKey = 'sk_07vkIYtFhTJY68s2pipRKmlvDtiqk'
 grails.plugins.stripe.publishableKey = 'pk_07vkx4yqszys5bnTNnHPSAAimkCie'
 
 
-grails.mail.default.from="server@yourhost.com"
+grails.mail.default.from="support@rolldelivered.com"
 
 grails {
 mail {
      host = "smtp.gmail.com"
      port = 465
-     username = "imran@rolldelivered.com"
+     username = "support@rolldelivered.com"
      password = "carr0t321"
      props = ["mail.smtp.auth":"true",
               "mail.smtp.socketFactory.port":"465",

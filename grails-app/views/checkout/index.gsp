@@ -567,7 +567,12 @@
                           <li>Box 33, Washington, DC 20002</li>
                           <li>Email us: support - [at] - rolldelivered.com</li>
                           <li>Call us: 202-683-0000
-                            <li><a href="http://www.twitter.com/rolldelivered"><img src="https://s3.amazonaws.com/rolldelivered-static/images/icon_twitter.gif" alt="Twitter" width="32" height="32" border="0" /></a> </li>
+
+
+
+
+                            <li>                              <a href="https://twitter.com/RollDelivered" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @RollDelivered</a>
+                                                          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><img src="https://s3.amazonaws.com/rolldelivered-static/images/icon_twitter.gif" alt="Twitter" width="32" height="32" border="0" /></a> </li>
                           </ul>
                           <p></p>
                           <h3>Our Policies:</h3>
