@@ -110,7 +110,8 @@ class CheckoutController {
 		log.info 'status is ${status}'
         if(!errorOccurred){
         try{
-            def emailMessage = """Thank you for signing up for Roll Delivered and welcome to a more simplified life.
+            def emailMessage = 
+            """Thank you for signing up for Roll Delivered and welcome to a more simplified life.
             You should look out for your first shipment in a couple of days.
             
             Order Details:

@@ -4,23 +4,17 @@
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>RollDelivered Terms of Service</title>
-    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
-    <link rel="stylesheet" href="../css/eco.css" type="text/css" />
-	<link href="../css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
-    <!--[if IE 9]> <link rel="stylesheet" href="css/styles_ie9.css" type="text/css" /> <![endif]-->
-    <!--[if IE 8]> <link rel="stylesheet" href="css/styles_ie8.css" type="text/css" /> <![endif]-->
-    <!--[if IE 7]> <link rel="stylesheet" href="css/styles_ie7.css" type="text/css" /> <![endif]-->
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/jquery.lightbox-0.5.css" type="text/css" />
-    <link rel="stylesheet" href="php/widget-rating.php?css" type="text/css" />
-    <!-- star rating css -->
-    <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
-    <script type="text/javascript" src="js/jquery.lightbox-0.5.pack.js"></script>
-    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="js/dtbaker_slider_links.js"></script>
-    <script type="text/javascript" src="js/dtbaker_slider.js"></script>
-    <script type="text/javascript" src="js/dtbaker_animation.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
+        <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/styles.css" type="text/css" />
+      <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/eco.css" type="text/css" />
+      <link href="https://s3.amazonaws.com/rolldelivered-static/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+      <link href='https://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css' />
+      <!-- star rating css -->
+      <script type="text/javascript" src="https://s3.amazonaws.com/rolldelivered-static/js/jquery-1.4.3.min.js"></script>
+      <script src="https://s3.amazonaws.com/rolldelivered-static/js/jquery.validate.min.js"></script>
+
+      <script src="https://s3.amazonaws.com/rolldelivered-static/js/spin.min.js"></script>
+
+
 
 
 

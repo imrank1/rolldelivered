@@ -431,7 +431,7 @@
                     </div>
 
                   </div>
-                  <input type="checkbox" id="termsOfServiceCheck" disabled="disabled" name="termsOfServiceCheck" checked> I Agree to the <a href="/terms">Terms of Service</a>
+                  <input type="checkbox" id="termsOfServiceCheck" disabled="disabled" name="termsOfServiceCheck" checked> I Agree to the <a href="/termsOfService">Terms of Service</a>
                   <p>
 
 
