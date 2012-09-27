@@ -1,12 +1,11 @@
 <!DOCTYPE html >
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Roll Delivered: Simple Hassle Free Toilet Paper Subscription</title>
   
     <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/styles.css" type="text/css" />
-  <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/eco.css" type="text/css" />
   <link href="https://s3.amazonaws.com/rolldelivered-static/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/eco.css" type="text/css" />
   <link href='https://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css' />
   <!-- star rating css -->
   <script type="text/javascript" src="https://s3.amazonaws.com/rolldelivered-static/js/jquery-1.4.3.min.js"></script>
@@ -72,44 +71,6 @@
   $(document).ready(function() {
       window.spinnertarget = document.getElementById('spinnerContainer');
       window.spinner = new Spinner();
-
-//      $("#payment-form").validate({
-//         submitHandler: function(form) {
-//       debugger;
-//       $("#errorMessage").hide("slow");
-//       $("#successMessage").hide("slow");
-//         // disable the submit button to prevent repeated clicks
-//         $('.submit-button').attr("disabled", "disabled");
-//         Stripe.createToken({
-//           number: $('.card-number').val(),
-//           cvc: $('.card-cvc').val(),
-//           exp_month: $('.card-expiry-month').val(),
-//           exp_year: $('.card-expiry-year').val()
-//         }, stripeResponseHandler);
-//         return false;
-//         }
-//      });
-//      var opts = {
-//        lines: 13, // The number of lines to draw
-//        length: 7, // The length of each line
-//        width: 4, // The line thickness
-//        radius: 10, // The radius of the inner circle
-//        corners: 1, // Corner roundness (0..1)
-//        rotate: 0, // The rotation offset
-//        color: '#000', // #rgb or #rrggbb
-//        speed: 1, // Rounds per second
-//        trail: 60, // Afterglow percentage
-//        shadow: false, // Whether to render a shadow
-//        hwaccel: false, // Whether to use hardware acceleration
-//        className: 'spinner', // The CSS class to assign to the spinner
-//        zIndex: 2e9, // The z-index (defaults to 2000000000)
-//        top: 'auto', // Top position relative to parent in px
-//        left: 'auto' // Left position relative to parent in px
-//      };
-
-
-
-//
     $("#payment-form").submit(function(event) {
       if($("#payment-form").valid()){
       window.spinner.spin();
@@ -532,7 +493,7 @@
                       <!--form-->
                       <div class="side_form">
                         <h3 class="blue">Have we not answered all your questions?:</h3>
-                        <a href="mailto:imran@rolldelivered.com">Email us!</a>
+                        <a href="mailto:support@rolldelivered.com">Email us!</a>
                       </div>
                       <!--end form-->
                     </div>
@@ -543,27 +504,29 @@
               <!-- end main box background -->
             </div>
 
+
             <!--end contact box-->
-            <div class="spacer_graphic6"></div>
+            %{--<div class="spacer_graphic6"></div>--}%
             <!--contact box-->
             <div class="main_box_wrapper" id="about">
               <div class="main_box_background"> <!-- start box background -->
                 <div class="main_box">
                   <div class="content">
                     <h1>About Us</h1>
-                    <h3>We built Roll Delivered to bring you peace of mind. We are taking the hassle out of buying, transporting and storing bulky bathroom rolls to give you simplicity you can rely on. We are committed to our customers and welcome your comments or concerns!<br></br></h3>
+                    <p>We built Roll Delivered to bring you peace of mind. We are taking the hassle out of buying, transporting and storing bulky bathroom rolls to give you simplicity you can rely on. We are committed to our customers and welcome your comments or concerns!<br></br></P>
                     <div class="half_column_left">
                       <h3>The Founders:</h3>
                       <div class="founders"><img src="https://s3.amazonaws.com/rolldelivered-static/images/imran.jpg" alt="Imran Khawaja" width="140" height="140" border="1.5"/><div class="text">Imran Khawaja<br>
                       Coding Guru, JHU CS</br></div></div>
+
                       <div class="founders"><img src="https://s3.amazonaws.com/rolldelivered-static/images/fhmalik.jpg" alt="FH Malik" width="140" height="140" border="1.5"/><div class="text">FH Malik<br>
-                      <p>former consultant, financier and tp enthusiast</p>
+                      <p>Former consultant, financier and current Toilet Paper enthusiast</p>
                       <a href="http://www.twitter.com/fhnama/">@fhnama</a></br></div></div>
                       </div>
                       <!--end left half-->
                       <div class="half_column_right">
                         <h3>Connect with us:</h3>
-                        <ul class="contacts">
+                        <ul class="contacts" style="margin-left:9px;">
                           <li>Box 33, Washington, DC 20002</li>
                           <li>Email us: support - [at] - rolldelivered.com</li>
                           <li>Call us: 202-683-0000
@@ -577,21 +540,24 @@
                           <p></p>
                           <h3>Our Policies:</h3>
                           <p></p>
-                          <li><a href="#">Terms of service</a></li>
-                          <li><a href="#">Privacy</a></li>
+                          <li><a href="/termsOfService">Terms of service</a></li>
+                          <li><a href="/privacy">Privacy</a></li>
                         </div>
                         <div class="clear"></div>
                       </div>
                       <!--end right half-->
                     </div>
                   </div>
+          </div>
+
                   <!-- end main box background -->
                   <!--start under animation-->
-                  
+
                   <!--end under animation-->
                 </div>
                 <!--end contact box-->
                 <!--bg top-->
                 <!-- star rating javascript -->
+
               </body>
               </html>

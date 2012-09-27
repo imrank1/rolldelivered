@@ -17,7 +17,7 @@ class CheckoutController {
 
         String proto = request.getHeader("X-Forwarded-Proto")
         println "proto is $proto"
-//        if(grails.util.Environment.getCurrent().equals(grails.util.Environment.PRODUCTION)){
+        if(grails.util.Environment.getCurrent().equals(grails.util.Environment.PRODUCTION)){
                 if(!proto.equals("https")){
                     println "Redirecting to https"
                     redirect(url:"https://www.rolldelivered.com")
@@ -26,13 +26,12 @@ class CheckoutController {
                     render(view: "index")
 
                 }
-//        }
-//        else{
-//            println "Non production mode index"
-//            render(view: "index")
-//
-//        }
-//            println("getting index ( in https ) ")
+        }
+        else{
+            println "Non production mode index"
+            render(view: "index")
+
+        }
     }
 
 
