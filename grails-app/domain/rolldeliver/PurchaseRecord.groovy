@@ -20,5 +20,6 @@ class PurchaseRecord {
         description (nullable: true)
         address2(nullable:true)
         address2(blank:true)
+        address2(nullable:true)
     }
 }

@@ -62,6 +62,9 @@ class CheckoutController {
         def city = params.city
         def zip = params.zip
         boolean errorOccurred = false
+
+        Errors errortest = new Errors(message:"Test Error",created: new Date())
+                        errortest.save(failOnError: true)
         if(!firstName || !lastName){
             response.status = 500
             def errorResponse = [:]
@@ -84,7 +87,7 @@ class CheckoutController {
             PurchaseRecord purchaseRecord = 
             new PurchaseRecord
             (firstName:firstName,lastName:lastName,address1:address1,address2:address2,city:city,zip:zip, stripeId:customer.getId(),email:email,description: desc,purchaseDate: new Date())
-            if(!purchaseRecord.save()){
+            if(!purchaseRecord.save(failOnError:true)){
                 log.info "Error saving purchase record"
                 purchaseRecord.errors.each { print it }
                 Errors error = new Errors(message:"Failed to save purchase record for  ${email} desc :${desc}",date:new Date())
@@ -96,7 +99,7 @@ class CheckoutController {
 	        log.info ('somthing with wrong processing signup for $email', ex  )
             status = 'There was an error processing your credit card. Please contact support at support@rolldelivered.com'
             Errors error = new Errors(message:"Failed to signup ${email}, error: ${ex.message}",date:new Date())
-            error.save()
+            error.save(failOnError:true)
             response.status = 500
         }
 
@@ -128,7 +131,7 @@ class CheckoutController {
         }}catch(Exception ex){
             log.info "Failed to send confirmation email to ${email}"
             Errors error = new Errors(message:"Failed to send confirmation email to ${email}",date:new Date())
-            error.save()
+            error.save(failOnError:true)
         }
         
         status = "Thanks for signing up!"

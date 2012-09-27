@@ -1,10 +1,16 @@
 
 grails {
     mongo {
-        host = "alex.mongohq.com"
-        port = 10022
+        host = "ds037997-a.mongolab.com"
+        port = 37997
         databaseName = "rolldelivered"
         user = "rolldelivered"
-        password = "only1Cyrus"
+        password = "sirah"
+
+//        host = "localhost"
+//                port = 27017
+//                databaseName = "rolldelivered"
+////                user = "rolldelivered"
+////                password = "sirah"
     }
 }
