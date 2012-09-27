@@ -435,7 +435,7 @@
                   <p>
 
 
-                  <a href="/privacy">Check out our Privacy Policy</a>
+                  %{--<a href="/privacy">Check out our Privacy Policy</a>--}%
 
                   <div class="actions" style="clear:none;">
                       %{--<div style="float:left;width:50%;">--}%

@@ -56,12 +56,7 @@
       <div id="header">
     <div id="logo"><a href="#home_page" class="slide_link">Roll Delivered - Hassle-Free Toilet Paper Delivery</a></div>
     <div id="menu">
-          <ul id="navigation">
-        <li><a href="index.html#home_page" class="slide_link">Home</a></li>
-        <li><a href="index.html#buy_now" class="slide_link">Buy Now</a></li>
-        <li><a href="index.html#support" class="slide_link">Support</a></li>
-        <li><a href="index.html#about" class="slide_link">About</a></li>
-      </ul>
+
         </div>
   </div>
     </div>
