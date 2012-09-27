@@ -4,7 +4,7 @@ grails {
         host = "alex.mongohq.com"
         port = 10022
         databaseName = "rolldelivered"
-        user = "imran"
-        password = "p0c0n0\$"
+        user = "rolldelivered"
+        password = "only1Cyrus"
     }
 }

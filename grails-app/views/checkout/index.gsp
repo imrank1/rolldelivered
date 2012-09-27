@@ -66,7 +66,7 @@
   </script>
 
   <script type="text/javascript">
-  Stripe.setPublishableKey('pk_07vkuRVmBagGqY4VbFQ7y345CbbNN');
+  Stripe.setPublishableKey('pk_07vkx4yqszys5bnTNnHPSAAimkCie');
 
   $(document).ready(function() {
       window.spinnertarget = document.getElementById('spinnerContainer');
