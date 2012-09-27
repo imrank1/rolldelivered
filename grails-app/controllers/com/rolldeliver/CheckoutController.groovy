@@ -63,8 +63,6 @@ class CheckoutController {
         def zip = params.zip
         boolean errorOccurred = false
 
-        Errors errortest = new Errors(message:"Test Error",created: new Date())
-                        errortest.save(failOnError: true)
         if(!firstName || !lastName){
             response.status = 500
             def errorResponse = [:]
