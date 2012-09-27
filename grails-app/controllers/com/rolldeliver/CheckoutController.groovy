@@ -51,8 +51,9 @@ class CheckoutController {
     }
     
 	def charge()  {
-        Stripe.apiKey = 'sk_07vkIYtFhTJY68s2pipRKmlvDtiqk'
-        def amountInCents = (100 * 100) as Integer
+
+
+        Stripe.apiKey = 'sk_07vkTfsJXClB16FwyAXCGqFFNJnls'
         def email = params.email
         def firstName = params.firstName
         def lastName = params.lastName
@@ -67,14 +68,7 @@ class CheckoutController {
             errorResponse.error = "Missing params!"
             render errorResponse as JSON
         }else {
-		log.info 'amountInCents = ${amountInCents}'
         String desc = "email:${email} signed up for delivery at ${address1} ${address2} ${city} ${zip}"
-        def chargeParams = [
-            'amount': amountInCents, 
-            'currency': 'usd', 
-            'card': params.stripeToken,
-            'description': desc
-        ]
 
         def status
         try {
