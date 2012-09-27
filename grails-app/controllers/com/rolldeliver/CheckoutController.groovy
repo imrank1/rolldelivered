@@ -110,20 +110,27 @@ class CheckoutController {
 		log.info 'status is ${status}'
         if(!errorOccurred){
         try{
-        sendMail  {
-            to "${email}"
-            subject "Subscription Confirmation with RollDelivered"
-            body """TThank you for signing up for Roll Delivered and welcome to a more simplified life.
+            def emailMessage = """Thank you for signing up for Roll Delivered and welcome to a more simplified life.
             You should look out for your first shipment in a couple of days.
-            The Roll Delivered Team
-            Order Details
+            
+            Order Details:
+
             You have signed up for the Roll Delivered Premium Pack for \$8.99/mo.
+            
             Maintenance and Support:
             Every month we will send you a link to defer a shipment.
+            
             We are committed to your satisfaction and if for any reason you would like to cancel.
             Please email us at support@rolldelivered.com.
 
-            Stay tuned for more features and look out for a special golden ticket in an upcoming delivery!"""
+            Stay tuned for more features and look out for a special golden ticket in an upcoming delivery!
+
+
+            The Roll Delivered Team"""
+        sendMail  {
+            to "${email}"
+            subject "Subscription Confirmation with RollDelivered"
+            body emailMessage
         }}catch(Exception ex){
             log.info "Failed to send confirmation email to ${email}"
             Errors error = new Errors(message:"Failed to send confirmation email to ${email}",date:new Date())

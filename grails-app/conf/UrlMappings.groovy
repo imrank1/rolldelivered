@@ -11,7 +11,9 @@ class UrlMappings {
 
        "/status"(controller: 'checkout', action: 'status')
 
+         "/termsOfService"(controller: 'checkout', view: "terms")
 
+        "/privacy"(controller: 'checkout', view: "privacyPolicy")
 	//	"/"(view:"/index")
 		
 		

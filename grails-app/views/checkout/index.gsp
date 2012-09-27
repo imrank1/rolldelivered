@@ -72,6 +72,44 @@
   $(document).ready(function() {
       window.spinnertarget = document.getElementById('spinnerContainer');
       window.spinner = new Spinner();
+
+//      $("#payment-form").validate({
+//         submitHandler: function(form) {
+//       debugger;
+//       $("#errorMessage").hide("slow");
+//       $("#successMessage").hide("slow");
+//         // disable the submit button to prevent repeated clicks
+//         $('.submit-button').attr("disabled", "disabled");
+//         Stripe.createToken({
+//           number: $('.card-number').val(),
+//           cvc: $('.card-cvc').val(),
+//           exp_month: $('.card-expiry-month').val(),
+//           exp_year: $('.card-expiry-year').val()
+//         }, stripeResponseHandler);
+//         return false;
+//         }
+//      });
+//      var opts = {
+//        lines: 13, // The number of lines to draw
+//        length: 7, // The length of each line
+//        width: 4, // The line thickness
+//        radius: 10, // The radius of the inner circle
+//        corners: 1, // Corner roundness (0..1)
+//        rotate: 0, // The rotation offset
+//        color: '#000', // #rgb or #rrggbb
+//        speed: 1, // Rounds per second
+//        trail: 60, // Afterglow percentage
+//        shadow: false, // Whether to render a shadow
+//        hwaccel: false, // Whether to use hardware acceleration
+//        className: 'spinner', // The CSS class to assign to the spinner
+//        zIndex: 2e9, // The z-index (defaults to 2000000000)
+//        top: 'auto', // Top position relative to parent in px
+//        left: 'auto' // Left position relative to parent in px
+//      };
+
+
+
+//
     $("#payment-form").submit(function(event) {
       if($("#payment-form").valid()){
       window.spinner.spin();
@@ -256,7 +294,7 @@
               <div class="span6 columns">
                 <fieldset>
 
-                  <g:form url="https://www.rolldelivered.com/checkout/charge" id="payment-form" useToken="true">
+                  <g:form url="checkout/charge" id="payment-form" useToken="true">
                   <div class="clearfix control-group">
                     <label class="control-label" for="firstName">First Name</label>
                     <div class="input">
@@ -393,11 +431,11 @@
                     </div>
 
                   </div>
-                  <input type="checkbox" id="termsOfServiceCheck" disabled="disabled" name="termsOfServiceCheck" checked> I Agree to the <a href="checkout/terms">Terms of Service</a>
+                  <input type="checkbox" id="termsOfServiceCheck" disabled="disabled" name="termsOfServiceCheck" checked> I Agree to the <a href="/terms">Terms of Service</a>
                   <p>
 
 
-                  %{--<a href="checkout/privacy">Check out our Privacy Policy</a>--}%
+                  <a href="/privacy">Check out our Privacy Policy</a>
 
                   <div class="actions" style="clear:none;">
                       %{--<div style="float:left;width:50%;">--}%
