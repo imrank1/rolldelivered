@@ -398,7 +398,6 @@
                           <div class="input">
                             <input class="field " id="zip" name="zip" type="text" />
                           </div>
-                        </div>
                       </div>
                       <!-- empty -->
                     </div>
@@ -558,7 +557,7 @@
                           <li><a href="/privacy">Privacy</a></li>
 			  <p></p>
 			  <br></br>
-			  &copy;2012 Roll Delivered Inc. All Rights Reserved.
+			   &copy;2012 Roll Delivered Inc. All Rights Reserved.
                         </div>
                         <div class="clear"></div>
                       </div>
