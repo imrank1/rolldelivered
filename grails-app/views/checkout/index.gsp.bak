@@ -246,35 +246,25 @@
                 <div class="bottom"></div>
               </div>
               <!--end side box-->
-	      <!--side box-->
-              <div class="side_box">
-                <div class="top"></div>
-                <div class="content_middle" align="center">
-                  <img src="https://s3.amazonaws.com/rolldelivered-static/images/card-info.png" alt="Secure Payments">
-                  <div class="clear"></div>
-                </div>
-                <div class="bottom"></div>
-              </div>
-              <!--end side box-->
 
             </div>
             <div class="content_right">
               <div class="box_title"> Get Roll Delivered. Simplify Your Life. </div>
-              <p><img src="https://s3.amazonaws.com/rolldelivered-static/images/formheader.png" style="margin-top:0px;"/></p>
+              <p><img src="https://s3.amazonaws.com/rolldelivered-static/images/formheader.png" style="margin-top:15px;"/></p>
               <p>Enter your details to order and Simplify Your Life.</p>
               <div class="span6 columns">
                 <fieldset>
 
                   <g:form url="checkout/charge" id="payment-form" useToken="true">
                   <div class="clearfix control-group">
-                    <label class="control-label" style="text-align:left" for="firstName">First Name</label>
+                    <label class="control-label" for="firstName">First Name</label>
                     <div class="input">
                       <input class="field" id="firstName" name="firstName" size="30" type="text" />
                     </div>
                   </div>
 
                   <div class="clearfix control-group">
-                   <label class="control-label" style="text-align:left" for="lastName">Last Name</label>
+                   <label class="control-label" for="lastName">Last Name</label>
                    <div class="input">
                      <input class="field" id="lastName" name="lastName" size="30" type="text" />
                    </div>
@@ -284,7 +274,7 @@
 
 
                  <div class="clearfix control-group">
-                  <label class="control-label" style="text-align:left" for="email">Email</label>
+                  <label class="control-label" for="email">Email</label>
                   <div class="input">
                     <input class="field" id="email" name="email" size="30" type="text" />
                   </div>
@@ -311,21 +301,21 @@
                   </div>
 
                   <div class="clearfix control-group">
-                    <label class="control-label" style="text-align:left" for="creditCardNumber">Credit Card Number</label>
+                    <label class="control-label" for="creditCardNumber">Credit Card Number
                       <div class="input">
                         <input class="field card-number"  type="text" />
                       </div>
                     </div>
 
                     <div class="clearfix control-group">
-                      <label class="control-label" style="text-align:left" for="cvv">Security code (CVV)</label>
+                      <label class="control-label" for="cvv">Security code (CVV)</label>
                       <div class="input">
                         <input class="input-small card-cvc"  id="cvv" type="text" />
                       </div>
                     </div>
 
                     <div class="clearfix control-group">
-                      <label class="control-label" style="text-align:left" for="card-expiry-month">Expiry Date</label>
+                      <label class="control-label" for="card-expiry-month">Expiry Date</label>
                       <div class="input">
                         <select class="input-small card-expiry-month">
                           <option value="1">1</option>
@@ -369,24 +359,22 @@
                           <option value="2036">2036</option>
                           <option value="2037">2037</option>
                         </select>
-			</div>
-			</div>
                         <div class="control-group">
-                          <label class="control-label" style="text-align:left" for="address1">Address</label>
+                          <label class="control-label" for="address1">Address</label>
                           <div class="input">
                             <input class="field " id="address1" name="address1" type="text" />
                           </div>
                         </div>
 
                         <div class="control-group">
-                          <label class="control-label" style="text-align:left" for="address2">Address (Optional)</label>
+                          <label class="control-label" for="address2">Additional Address Info (Optional) </label>
                           <div class="input">
                             <input class="field " id="address2"  type="text" />
                           </div>
                         </div>
 
                         <div class="control-group">
-                          <label class="control-label" style="text-align:left" for="city">City </label>
+                          <label class="control-label" for="city">City </label>
                           <div class="input">
                             <input class="field " id="city" name="city" type="text" />
                           </div>
@@ -394,7 +382,7 @@
 
 
                         <div class="control-group">
-                          <label class="control-label" style="text-align:left" for="zip">Zip Code </label>
+                          <label class="control-label" for="zip">Zip Code </label>
                           <div class="input">
                             <input class="field " id="zip" name="zip" type="text" />
                           </div>
@@ -414,8 +402,6 @@
                       %{--<div style="float:left;width:50%;">--}%
 
                       <span><button type="submit" class="btn btn-primary submit-button " ">Sign up Now!</button>
-		      <span class="help-inline">This is a Secure Transaction.</span>
-
                       %{--</div>--}%
                       <div id="spinnerContainer" style="float:right; width:65%; margin-top:16px"></div>
                       <span>
@@ -549,16 +535,13 @@
 
 
                             <li>                              <a href="https://twitter.com/RollDelivered" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @RollDelivered</a>
-                                                          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></a> </li>
+                                                          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><img src="https://s3.amazonaws.com/rolldelivered-static/images/icon_twitter.gif" alt="Twitter" width="32" height="32" border="0" /></a> </li>
                           </ul>
                           <p></p>
                           <h3>Our Policies:</h3>
                           <p></p>
                           <li><a href="/termsOfService">Terms of service</a></li>
                           <li><a href="/privacy">Privacy</a></li>
-			  <p></p>
-			  <br></br>
-			  &copy;2012 Roll Delivered Inc. All Rights Reserved.
                         </div>
                         <div class="clear"></div>
                       </div>
