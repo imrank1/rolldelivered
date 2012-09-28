@@ -257,7 +257,7 @@
               </div>
               <!--end side box-->
 
-            </div>
+            </div>	
             <div class="content_right">
               <div class="box_title"> Get Roll Delivered. Simplify Your Life. </div>
               <p><img src="https://s3.amazonaws.com/rolldelivered-static/images/formheader.png" style="margin-top:0px;"/></p>
@@ -265,7 +265,7 @@
               <div class="span6 columns">
                 <fieldset>
 
-                  <g:form url="checkout/charge" id="payment-form" useToken="true">
+                  <g:form url="checkout/charge" id="payment-form" useToken="true" class="form-horizontal">
                   <div class="clearfix control-group">
                     <label class="control-label" style="text-align:left" for="firstName">First Name</label>
                     <div class="input">
@@ -400,7 +400,6 @@
                           </div>
                       </div>
                       <!-- empty -->
-                    </div>
 
                   </div>
                   <input type="checkbox" id="termsOfServiceCheck" disabled="disabled" name="termsOfServiceCheck" checked> I Agree to the <a href="/termsOfService">Terms of Service</a>
