@@ -78,7 +78,7 @@ class CheckoutController {
             customerParams.put("description", desc);
             customerParams.put("card", params.stripeToken);
             customerParams.put("plan","starter")
-            customerParams.put("email",email)// obtained with Stripe.js
+            customerParams.put("email",email)
             Customer customer = Customer.create(customerParams);
 
 
