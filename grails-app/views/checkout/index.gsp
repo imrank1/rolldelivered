@@ -72,6 +72,7 @@
       window.spinnertarget = document.getElementById('spinnerContainer');
       window.spinner = new Spinner();
     $("#payment-form").submit(function(event) {
+      $('.submit-button').attr("disabled", "disabled");
       if($("#payment-form").valid()){
       window.spinner.spin();
       window.spinnertarget.appendChild(spinner.el);
@@ -80,7 +81,6 @@
       $("#errorMessage").hide("slow");
       $("#successMessage").hide("slow");
         // disable the submit button to prevent repeated clicks
-        $('.submit-button').attr("disabled", "disabled");
         Stripe.createToken({
           number: $('.card-number').val(),
           cvc: $('.card-cvc').val(),
@@ -179,11 +179,8 @@
         <div class="main_box_wrapper" id="home_pag" style="padding-top:0;">
           <div class="main_box_background"> <!-- start box background -->
 
-            <!--home box-->
             <div class="main_box" id="section1">
-              <!-- <div class="home_price_tag"> WAS <del>$400</del>
-        <div class="band"> NOW <span class="size48">$350</span></div>
-      </div>-->
+
       <div class="home_box">
         <div class="text">
           <h1>Welcome to Roll Delivered</h1>
@@ -250,7 +247,7 @@
               <div class="side_box">
                 <div class="top"></div>
                 <div class="content_middle" align="center">
-                  <img src="https://s3.amazonaws.com/rolldelivered-static/images/card-info.png" alt="Secure Payments">
+                  <a href="https://www.stripe.com"><img src="https://s3.amazonaws.com/rolldelivered-static/images/card-info.png" alt="Secure Payments"></a>
                   <div class="clear"></div>
                 </div>
                 <div class="bottom"></div>
@@ -560,19 +557,12 @@
                         </div>
                         <div class="clear"></div>
                       </div>
-                      <!--end right half-->
                     </div>
-                  </div>
+                  </div>            
           </div>
 
-                  <!-- end main box background -->
-                  <!--start under animation-->
-
-                  <!--end under animation-->
                 </div>
-                <!--end contact box-->
-                <!--bg top-->
-                <!-- star rating javascript -->
+
 
               </body>
               </html>
