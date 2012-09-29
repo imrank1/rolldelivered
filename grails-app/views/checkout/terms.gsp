@@ -23,38 +23,13 @@
 	document.write(unescape('%3Cstyle type="text/css"%3E.spacer_animation .spacer_animation_parts div{ margin-top:400px; }%3C/style%3E'));
 	document.write(unescape('%3Cstyle type="text/css"%3E.main_box_background .main_box_bg_left{ margin-left:0px; }%3C/style%3E'));
 	document.write(unescape('%3Cstyle type="text/css"%3E.main_box_background .main_box_bg_right{ margin-left:475px;margin-top:-438px; }%3C/style%3E'));
-    $(function() {
-		$('.spacer_animation').each(function(){
-			var foo = new anim_scroller();
-			foo.init_popup(this);
-			anim_scrollers.push(foo);
-		});
 
-
-        $('.lightbox').lightBox();
-        $('.dtbaker_gallery a').lightBox();
-        // this starts the "portfolio" sideways scroller.
-        // create a new one of these for each sideways scroller you would like to have.
-        new dtbaker_scroller('portfolio_slider');
-		new dtbaker_simpleCart({
-			'id': 'buy_now', // unique id for this product. don't change this.
-			'paypal': 'dtbaker@gmail.com', // change to false to disable paypal
-			'google': '251134918603076', // change to false to disable google
-			'email': true, // allow the email method
-			'flat_rate': false, // change to false to charge shipping per item
-			'shipping_rate': 0, // shipping rate is controlled by the drop down on order form.
-			'product_name': 'TP Box from Roll Delivered',
-			'product_price': 9.99,
-			'currency': USD,
-			'thank_you_url': 'thank_you.html'
-		});
-	});
     </script>
     </head>
     <body>
 <div id="fixed_header">
       <div id="header">
-    <div id="logo"><a href="#home_page" class="slide_link">Roll Delivered - Hassle-Free Toilet Paper Delivery</a></div>
+          <div id="logo"><a href="https://www.rolldelivered.com" class="slide_link">Roll Delivered - Hassle-Free Toilet Paper Delivery</a></div>
     <div id="menu">
 
         </div>
