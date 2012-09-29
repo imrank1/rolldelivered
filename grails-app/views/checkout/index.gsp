@@ -526,7 +526,7 @@
                     <div class="half_column_left">
                       <h3>The Founders:</h3>
                       <div class="founders"><img src="https://s3.amazonaws.com/rolldelivered-static/images/imran.jpg" alt="Imran Khawaja" width="140" height="140" border="1.5"/><div class="text">Imran Khawaja<br>
-                      Coding Guru, JHU CS</br></div></div>
+                      Programmer,UMBC & JHU Computer Science</br></div></div>
 
                       <div class="founders"><img src="https://s3.amazonaws.com/rolldelivered-static/images/fhmalik.jpg" alt="FH Malik" width="140" height="140" border="1.5"/><div class="text">FH Malik<br>
                       <p>Former consultant, financier and current Toilet Paper enthusiast</p>
