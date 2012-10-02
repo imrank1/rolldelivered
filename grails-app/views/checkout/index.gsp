@@ -238,7 +238,7 @@
                 <div class="top"></div>
                 <div class="content_middle" align="middle">
                   <img src="https://s3.amazonaws.com/rolldelivered-static/images/premium_quality2.png" alt="Satisfaction Guaranteed"/>
-                  <p>Satisfaction Guaranteed</p>
+                  <p><strong>Soft & Fluffy Money-Back Guarantee</strong></p>
                   <div class="clear"></div>
                 </div>
                 <div class="bottom"></div>
