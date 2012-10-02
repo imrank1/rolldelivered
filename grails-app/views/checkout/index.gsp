@@ -531,7 +531,7 @@
                       Programmer,UMBC & JHU Computer Science</br></div></div>
 
                       <div class="founders"><img src="https://s3.amazonaws.com/rolldelivered-static/images/fhmalik.jpg" alt="FH Malik" width="140" height="140" border="1.5"/><div class="text">FH Malik<br>
-                      <p>Former consultant, financier and current Toilet Paper enthusiast</p>
+                      <p><a href="http://www.utexas.edu/">Longhorn.</a> Former consultant, financier and current Toilet Paper enthusiast.</p>
                       <a href="http://www.twitter.com/fhnama/">@fhnama</a></br></div></div>
                       </div>
                       <!--end left half-->
