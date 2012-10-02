@@ -20,15 +20,15 @@
     <script type="text/javascript" src="js/dtbaker_slider_links.js"></script>
     <script type="text/javascript" src="js/dtbaker_slider.js"></script>
     <script type="text/javascript" src="js/dtbaker_animation.js"></script>
+
+
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 
-
-    <script type="text/javascript"> //google analytics
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-34220335-1']);
-  _gaq.push(['_setDomainName', 'doughly.com']);
-  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_setDomainName', 'rolldelivered.com']);
   _gaq.push(['_trackPageview']);
 
   (function() {
@@ -37,7 +37,8 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-	</script>
+</script>
+
 
 
 
