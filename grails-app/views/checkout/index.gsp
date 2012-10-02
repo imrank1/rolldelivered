@@ -130,7 +130,8 @@
             window.spinner.stop();
             $("#successMessage").show("slow");
             $(".submit-button").removeAttr("disabled");
-          },
+            $("#payment-form").find('input:text, input:password, input:file, select, textarea').val('');
+            $("#payment-form").find('input:radio, input:checkbox').removeAttr('checked').removeAttr('selected');          },
           error: function(){
             $("#errorMessage").show("slow");
           }
@@ -483,7 +484,7 @@
                   <p><strong class="title14">Will I be automatically billed every month?</strong><br />
                     We know how much of a pain it can be to be automatically hooked into anything and we give all our customers the choice to defer shipment or cancel every month. We want to make this simple and hassle-free. We like our customers. We want you to be happy!</p>
                     <p><strong class="title14">How many people is one Roll Delivered order for?</strong><br />
-                      Our sophisiticated mathematical models are based on useage statistics for one to two people. If you have more than two people in the household, we recommend you purchase multiple packs.</p>
+                      Our sophisiticated mathematical models are based on useage statistics for one to two people :). If you have more than two people in the household, we recommend you purchase multiple packs.</p>
                     </div>
                     <!--end content left-->
                     <div class="side_right">
@@ -501,7 +502,7 @@
                       <!--end side box thin-->
                       <!--form-->
                       <div class="side_form">
-                        <h3 class="blue">Have we not answered all your questions?:</h3>
+                        <h3 class="blue">Have we not answered all your questions?</h3>
                         <a href="mailto:support@rolldelivered.com">Email us!</a>
                       </div>
                       <!--end form-->
