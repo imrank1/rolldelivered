@@ -28,7 +28,7 @@
           minlength: 2,
           required: true
         },
-        lastName: {                                            PO
+        lastName: {
           minlength: 2,
           required:true
         },

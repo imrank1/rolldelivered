@@ -16,7 +16,10 @@ class UrlMappings {
         "/privacy"(controller: 'checkout', view: "privacyPolicy")
 	//	"/"(view:"/index")
 		
-		
+
+        "/api/v1/callback"(controller: 'stripeApiCallback',action = [POST: "processStripeCallback"])
+
+
 		"500"(view:'/error')
 	}
 }
