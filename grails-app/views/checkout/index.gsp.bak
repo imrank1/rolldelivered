@@ -28,7 +28,7 @@
           minlength: 2,
           required: true
         },
-        lastName: {                                            PO
+        lastName: {
           minlength: 2,
           required:true
         },
@@ -72,6 +72,7 @@
       window.spinnertarget = document.getElementById('spinnerContainer');
       window.spinner = new Spinner();
     $("#payment-form").submit(function(event) {
+      $('.submit-button').attr("disabled", "disabled");
       if($("#payment-form").valid()){
       window.spinner.spin();
       window.spinnertarget.appendChild(spinner.el);
@@ -80,7 +81,6 @@
       $("#errorMessage").hide("slow");
       $("#successMessage").hide("slow");
         // disable the submit button to prevent repeated clicks
-        $('.submit-button').attr("disabled", "disabled");
         Stripe.createToken({
           number: $('.card-number').val(),
           cvc: $('.card-cvc').val(),
@@ -130,7 +130,8 @@
             window.spinner.stop();
             $("#successMessage").show("slow");
             $(".submit-button").removeAttr("disabled");
-          },
+            $("#payment-form").find('input:text, input:password, input:file, select, textarea').val('');
+            $("#payment-form").find('input:radio, input:checkbox').removeAttr('checked').removeAttr('selected');          },
           error: function(){
             $("#errorMessage").show("slow");
           }
@@ -179,11 +180,8 @@
         <div class="main_box_wrapper" id="home_pag" style="padding-top:0;">
           <div class="main_box_background"> <!-- start box background -->
 
-            <!--home box-->
             <div class="main_box" id="section1">
-              <!-- <div class="home_price_tag"> WAS <del>$400</del>
-        <div class="band"> NOW <span class="size48">$350</span></div>
-      </div>-->
+
       <div class="home_box">
         <div class="text">
           <h1>Welcome to Roll Delivered</h1>
@@ -240,7 +238,7 @@
                 <div class="top"></div>
                 <div class="content_middle" align="middle">
                   <img src="https://s3.amazonaws.com/rolldelivered-static/images/premium_quality2.png" alt="Satisfaction Guaranteed"/>
-                  <p>Satisfaction Guaranteed</p>
+                  <p><strong>Soft & Fluffy Money-Back Guarantee</strong></p>
                   <div class="clear"></div>
                 </div>
                 <div class="bottom"></div>
@@ -250,7 +248,7 @@
               <div class="side_box">
                 <div class="top"></div>
                 <div class="content_middle" align="center">
-                  <img src="https://s3.amazonaws.com/rolldelivered-static/images/card-info.png" alt="Secure Payments">
+                  <a href="https://www.stripe.com"><img src="https://s3.amazonaws.com/rolldelivered-static/images/card-info.png" alt="Secure Payments"></a>
                   <div class="clear"></div>
                 </div>
                 <div class="bottom"></div>
@@ -400,7 +398,6 @@
                           </div>
                       </div>
                       <!-- empty -->
-                    </div>
 
                   </div>
                   <input type="checkbox" id="termsOfServiceCheck" disabled="disabled" name="termsOfServiceCheck" checked> I Agree to the <a href="/termsOfService">Terms of Service</a>
@@ -487,7 +484,7 @@
                   <p><strong class="title14">Will I be automatically billed every month?</strong><br />
                     We know how much of a pain it can be to be automatically hooked into anything and we give all our customers the choice to defer shipment or cancel every month. We want to make this simple and hassle-free. We like our customers. We want you to be happy!</p>
                     <p><strong class="title14">How many people is one Roll Delivered order for?</strong><br />
-                      Our sophisiticated mathematical models are based on useage statistics for one to two people. If you have more than two people in the household, we recommend you purchase multiple packs.</p>
+                      Our sophisiticated mathematical models are based on useage statistics for one to two people :). If you have more than two people in the household, we recommend you purchase multiple packs.</p>
                     </div>
                     <!--end content left-->
                     <div class="side_right">
@@ -505,7 +502,7 @@
                       <!--end side box thin-->
                       <!--form-->
                       <div class="side_form">
-                        <h3 class="blue">Have we not answered all your questions?:</h3>
+                        <h3 class="blue">Have we not answered all your questions?</h3>
                         <a href="mailto:support@rolldelivered.com">Email us!</a>
                       </div>
                       <!--end form-->
@@ -516,6 +513,7 @@
               </div>
               <!-- end main box background -->
             </div>
+            
 
 
             <!--end contact box-->
@@ -530,10 +528,10 @@
                     <div class="half_column_left">
                       <h3>The Founders:</h3>
                       <div class="founders"><img src="https://s3.amazonaws.com/rolldelivered-static/images/imran.jpg" alt="Imran Khawaja" width="140" height="140" border="1.5"/><div class="text">Imran Khawaja<br>
-                      Coding Guru, JHU CS</br></div></div>
+                      Programmer,UMBC & JHU Computer Science</br></div></div>
 
                       <div class="founders"><img src="https://s3.amazonaws.com/rolldelivered-static/images/fhmalik.jpg" alt="FH Malik" width="140" height="140" border="1.5"/><div class="text">FH Malik<br>
-                      <p>Former consultant, financier and current Toilet Paper enthusiast</p>
+                      <p><a href="http://www.utexas.edu/">Longhorn.</a> Former consultant, financier and current Toilet Paper enthusiast.</p>
                       <a href="http://www.twitter.com/fhnama/">@fhnama</a></br></div></div>
                       </div>
                       <!--end left half-->
@@ -561,19 +559,12 @@
                         </div>
                         <div class="clear"></div>
                       </div>
-                      <!--end right half-->
                     </div>
-                  </div>
+                  </div>            
           </div>
 
-                  <!-- end main box background -->
-                  <!--start under animation-->
-
-                  <!--end under animation-->
                 </div>
-                <!--end contact box-->
-                <!--bg top-->
-                <!-- star rating javascript -->
+
 
               </body>
               </html>
