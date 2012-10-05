@@ -2,7 +2,15 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Roll Delivered: Simple Hassle Free Toilet Paper Subscription</title>
-   <link rel="shortcut icon" href="https://s3.amazonaws.com/rolldelivered-static/images/favicon.ico.png" type="image/x-icon" />
+  <meta name="description" content="Get toilet paper delivered to your door. Never get caught with your pants down again! Save time, money, and preserve your dignity. Get your Roll Delivered!" />
+  <meta name="keywords" content="toilet paper delivery, toilet paper, bathroom tissue, bath tissue, TP, rolls, roll, buy rolls, delivery service, buy toilet paper online, buy toilet paper, easy subscription, toilet paper subscription, delivery service , quality toilet paper, premium toilet paper, plush, fluffy, soft, smooth, brilliant bathroom tissue, toiletries" />
+
+  <meta property="og:title" content="RollDelivered.com - Never Get Caught With Your Pants Down.">
+
+  <meta name="twitter:card" content="player">
+  <meta name="twitter:site" content="@rolldelivered">
+
+  <link rel="shortcut icon" href="https://s3.amazonaws.com/rolldelivered-static/images/favicon.ico.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/styles.css" type="text/css" />
   <link href="https://s3.amazonaws.com/rolldelivered-static/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/eco.css" type="text/css" />
@@ -186,7 +194,7 @@
         <div class="text">
           <h1>Welcome to Roll Delivered</h1>
           <h2 style="font-weight:bold">We deliver premium toilet paper to you monthly for $8.99. Simple.</h2>
-          <h3>No Hassles! One Step Signup. One Step Cancellation.<br></h3>
+          <h3>No Hassle!<br /> One Step Signup. One Step Cancellation.<br /></h3>
           <ul class="numbered_list">
             <li><span>1</span>No more runs to the store.</li>
             <li><span>2</span>Never carry bulky packs of toilet paper in public again.</li>
