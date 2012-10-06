@@ -16,6 +16,7 @@ class UrlMappings {
         "/privacy"(controller: 'checkout', view: "privacyPolicy")
 	//	"/"(view:"/index")
 		
+        "/subscription/cancel"(controller: 'subscription', action = [POST: "cancel"])
 
         "/api/v1/callback"(controller: 'stripeApiCallback',action = [POST: "processStripeCallback"])
 

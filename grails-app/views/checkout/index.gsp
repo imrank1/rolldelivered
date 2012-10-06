@@ -3,13 +3,16 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Roll Delivered: Simple Hassle Free Toilet Paper Subscription</title>
    <link rel="shortcut icon" href="https://s3.amazonaws.com/rolldelivered-static/images/favicon.ico.png" type="image/x-icon" />
-    <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/styles.css" type="text/css" />
   <link href="https://s3.amazonaws.com/rolldelivered-static/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/styles.css" type="text/css" />
   <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/eco.css" type="text/css" />
   <link href='https://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css' />
   <!-- star rating css -->
-  <script type="text/javascript" src="https://s3.amazonaws.com/rolldelivered-static/js/jquery-1.4.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  %{--<script type="text/javascript" src="https://s3.amazonaws.com/rolldelivered-static/js/jquery-1.4.3.min.js"></script>--}%
   <script src="https://s3.amazonaws.com/rolldelivered-static/js/jquery.validate.min.js"></script>
+    <script src="https://s3.amazonaws.com/rolldelivered-static/js/bootstrap.min.js"></script>
+
 
   <script src="https://s3.amazonaws.com/rolldelivered-static/js/spin.min.js"></script>
 
@@ -91,6 +94,51 @@
         return false;
     }
       });
+      
+      
+      
+      $("#cancel-form").submit(function(event) {
+          $("#cancelsuccessMessage").hide("slow");
+          $("#noEmailMessage").hide("slow");
+          $("#cancelsuccessMessage").hide("slow");
+
+          var validEmailInput = true
+          $('#unregister-button').attr("disabled", "disabled");
+          var cancelEmail = $('#cancelEmail').val();
+          if(cancelEmail == ''){
+              $("#noEmailMessage").show("slow");
+              validEmailInput = false
+          }
+          if(validEmailInput){
+          $.ajax({
+                    url: 'subscription/cancel',
+                    type: 'post',
+                    data: { email:cancelEmail},
+                    cache: false,
+                    success: function(){
+                      window.spinner.stop();
+                        $("#cancelsuccessMessage").show("slow").delay(5000).hide("slow");
+                      $("#unregister-button").removeAttr("disabled");
+                      $("#cancel-form").find('input:text').val('');
+                      $("#payment-form").find('input:radio, input:checkbox').removeAttr('checked').removeAttr('selected');
+                    },
+                    error: function(){
+                        $("#cancelsuccessMessage").show("slow");
+                    }
+                  });
+
+
+          }else{
+              $("#cancelerrorMissingEmail").show("slow").delay(3000).hide("slow");
+              $("#unregister-button").removeAttr("disabled");
+              $("#cancel-form").find('input:text').val('');
+
+          }
+          $("unregister-button").removeAttr("disabled");
+          return false;
+
+            });  
+      
   });
   </script>
 
@@ -485,7 +533,8 @@
                     We know how much of a pain it can be to be automatically hooked into anything and we give all our customers the choice to defer shipment or cancel every month. We want to make this simple and hassle-free. We like our customers. We want you to be happy!</p>
                     <p><strong class="title14">How many people is one Roll Delivered order for?</strong><br />
                       Our sophisiticated mathematical models are based on useage statistics for one to two people :). If you have more than two people in the household, we recommend you purchase multiple packs.</p>
-                    </div>
+
+        </div>
                     <!--end content left-->
                     <div class="side_right">
                       <!--side menu-->
@@ -504,6 +553,10 @@
                       <div class="side_form">
                         <h3 class="blue">Have we not answered all your questions?</h3>
                         <a href="mailto:support@rolldelivered.com">Email us!</a>
+
+          <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+
+
                       </div>
                       <!--end form-->
                     </div>
@@ -565,6 +618,32 @@
 
                 </div>
 
+    <div class="modal hide fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Cancelellation: We're sad to see you go!</h3>
+      </div>
+      <div class="modal-body">
+            <g:form url="subscription/cancel" id="cancel-form" useToken="true" class="form-horizontal">
+                  <div class="clearfix control-group">
+                    <label class="control-label" style="text-align:left" for="firstName">Your Email Address</label>
+                    <div class="input">
+                      <input class="field" style="float:left;"id="cancelEmail" name="cancelEmail" size="30" type="text" />
+                    </div>
+                <button type="submit" id="unregister-button" style="float:right;" class="btn btn-danger submit-button " ">UnRegister</button>
 
+                  </div>
+
+                </g:form>
+          <div class="alert alert-success" style="display:none;" id="cancelsuccessMessage"> Please check your email to confirm cancellation.</div>
+          <div class="alert alert-error" id="cancelerrorMessage" class="alert alert-error" style="display:none;">Hmm something went wrong on our end processing your cancellation! Please try again or contact support at support@rolldelivered.com.</p> </div>
+          <div class="alert alert-error" id="cancelerrorMissingEmail" class="alert alert-error" style="display:none;">You must provide the email address you created the account with here! :)</p> </div>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        %{--<button class="btn btn-primary">Save changes</button>--}%
+      </div>
+    </div>
               </body>
               </html>
