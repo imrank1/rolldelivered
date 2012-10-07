@@ -2,7 +2,17 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Roll Delivered: Simple Hassle Free Toilet Paper Subscription</title>
-   <link rel="shortcut icon" href="https://s3.amazonaws.com/rolldelivered-static/images/favicon.ico.png" type="image/x-icon" />
+
+  <meta name="description" content="Get toilet paper delivered to your door. Never get caught with your pants down again! Save time, money, and preserve your dignity. Get your Roll Delivered!" />
+  <meta name="keywords" content="toilet paper delivery, toilet paper, bathroom tissue, bath tissue, TP, rolls, roll, buy rolls, delivery service, buy toilet paper online, buy toilet paper, easy subscription, toilet paper subscription, delivery service , quality toilet paper, premium toilet paper, plush, fluffy, soft, smooth, brilliant bathroom tissue, toiletries" />
+
+  <meta property="og:title" content="RollDelivered.com - Never Get Caught With Your Pants Down.">
+
+  <meta name="twitter:card" content="player">
+  <meta name="twitter:site" content="@rolldelivered">
+
+  <link rel="shortcut icon" href="https://s3.amazonaws.com/rolldelivered-static/images/favicon.ico.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/styles.css" type="text/css" />
   <link href="https://s3.amazonaws.com/rolldelivered-static/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/styles.css" type="text/css" />
   <link rel="stylesheet" href="https://s3.amazonaws.com/rolldelivered-static/css/eco.css" type="text/css" />
@@ -69,7 +79,7 @@
   </script>
 
   <script type="text/javascript">
-  Stripe.setPublishableKey('pk_07vkx4yqszys5bnTNnHPSAAimkCie');
+  Stripe.setPublishableKey('pk_07vkuRVmBagGqY4VbFQ7y345CbbNN');
 
   $(document).ready(function() {
       window.spinnertarget = document.getElementById('spinnerContainer');
@@ -235,11 +245,11 @@
         <div class="text">
           <h1>Welcome to Roll Delivered</h1>
           <h2 style="font-weight:bold">We deliver premium toilet paper to you monthly for $8.99. Simple.</h2>
-          <h3>One Step to Signup. One Step to Cancel.<br> No Hassles.</h3>
+          <h3>No Hassle!<br /> One Step Signup. One Step Cancellation.<br /></h3>
           <ul class="numbered_list">
             <li><span>1</span>No more runs to the store.</li>
             <li><span>2</span>Never carry bulky packs of toilet paper in public again.</li>
-            <li><span>3</span>Automatic monthly delivery. Defer a month with One Click.</li>
+            <li><span>3</span>Automatic monthly delivery.</li>
           </ul>
           <ul class="buttons_float" style="margin-top: -15px;">
             <li>
@@ -276,7 +286,9 @@
                 <div class="top"></div>
                 <div class="content_middle" align="middle">
                   <img src="https://s3.amazonaws.com/rolldelivered-static/images/eco/price_box.png" alt="$8.99 shipping and tax included" />
-                  <p>Thats $0.004 per sheet.</p>
+                  <p>Only $0.004 per sheet!</p>
+		  <p>Other brands: $.0085</p>
+		  <p><strong>You save 50&#37;</strong></p>
                   <div class="clear"></div>
                 </div>
                 <div class="bottom"></div>
@@ -521,27 +533,29 @@
           <p class="title18">Frequently Asked Questions</p>
           <ul class="dots">
             <li><a href="#support">What is this Roll Delivered thing?</a></li>
+            <li><a href="#support">How big are your rolls compared to other leading brands?</a></li>
             <li><a href="#support">How much do I get?</a></li>
-            <li><a href="#support">Do you guys send prison roll?</a></li>
+	    <li><a href="#support">Do you guys send prison roll?</a></li>
             <li><a href="#support">How much is shipping?</a></li>
             <li><a href="#support">Will I be automatically billed every month?</a></li>
             <li><a href="#support">How many people is one Roll Delivered order for?</a></li>
-            <li>I want to cancel my account! Click  <a href="#myModal" role="button" class="" data-toggle="modal">here</a></li>
           </ul>
           <p><strong class="title14">What is this Roll Delivered thing?</strong><br />
             Thanks for asking! Roll Delivered is a service to deliver you toilet paper every month. All you have to do is sign up with us and you will never have to think about toilet paper again. We ship it over automatically so you never run out. Nationwide shipping is included in the price so there is nothing extra you have to worry about.</p>
-            <p><strong class="title14">How much do I get?</strong><br />
+            <p><strong class="title14">How big are your rolls compared to other leading brands?</strong><br />
+              Our rolls are bigger, cheaper and guaranteed to last longer than even the largest Premium Double Rolls sold by our competitors. We don't compromise on softness or fluffyness so you will always be satisfied! Competing "Premium Double Rolls" have less than 200 sheets and average over $14.00 for 2000 sheets. We're Simply $8.99 for 2000 sheets - and you never have to remember to buy any again!</p>
+              <p><strong class="title14">How much do I get?</strong><br />
               In every monthly shipment we will send you 2000 sheets in 4 special premium quality rolls. This should be enough for even our most power users.</p>
-              <p><strong class="title14">Do you guys send prison (poor quality) roll?</strong><br />
-                Absolutely Not! We only ship premium quality product from the nations leading brands! No single ply poor quality products here. Only Super Awesome Premium Stuff.</p>
-                <p><strong class="title14">How much is shipping?</strong><br />
-                  FREE! Our prices include shipping to any address in the Continental US.</p>
-                  <p><strong class="title14">Will I be automatically billed every month?</strong><br />
-                    We know how much of a pain it can be to be automatically hooked into anything and we give all our customers the choice to defer shipment or cancel every month. We want to make this simple and hassle-free. We like our customers. We want you to be happy!</p>
+		<p><strong class="title14">Do you guys send prison (poor quality) roll?</strong><br />
+                 Absolutely Not! We only ship premium quality product from the nations leading brands! No single ply poor quality products here. Only Super Awesome Premium Stuff.</p>
+                  <p><strong class="title14">How much is shipping?</strong><br />
+                    FREE! Our prices include shipping to any address in the Continental US.</p>
+                    <p><strong class="title14">Will I be automatically billed every month?</strong><br />
+                    We know how much of a pain it can be to be automatically hooked into anything. We make cancelling a breeze. We want to make this simple and hassle-free. We like our customers. We want you to be happy!</p>
                     <p><strong class="title14">How many people is one Roll Delivered order for?</strong><br />
-                      Our sophisiticated mathematical models are based on useage statistics for one to two people :). If you have more than two people in the household, we recommend you purchase multiple packs.</p>
 
-        </div>
+                      Our sophisticated mathematical models are based on usage statistics for one to two people :). If you have more than two people in the household, we recommend you purchase multiple packs.</p>
+                    </div>
                     <!--end content left-->
                     <div class="side_right">
                       <!--side menu-->
@@ -560,9 +574,6 @@
                       <div class="side_form">
                         <h3 class="blue">Have we not answered all your questions?</h3>
                         <a href="mailto:support@rolldelivered.com">Email us!</a>
-
-          <a href="#myModal" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
-
 
                       </div>
                       <!--end form-->
@@ -598,9 +609,9 @@
                       <div class="half_column_right">
                         <h3>Connect with us:</h3>
                         <ul class="contacts" style="margin-left:9px;">
-                          <li>Box 33, Washington, DC 20002</li>
+                          <li>Box 33, 2336B Wisconsin Ave. NW Washington, DC 20007</li>
                           <li>Email us: support - [at] - rolldelivered.com</li>
-                          <li>Call us: 202-683-0000
+                          <li>Call us: 202-630-7865
 
 
 

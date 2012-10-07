@@ -72,9 +72,9 @@ class SubscriptionController {
     
     def processCancel = {
         //Live
-        //Stripe.apiKey ='sk_07vkTfsJXClB16FwyAXCGqFFNJnls'
+        Stripe.apiKey ='sk_07vkTfsJXClB16FwyAXCGqFFNJnls'
         //TEst
-        Stripe.apiKey = 'sk_07vkIYtFhTJY68s2pipRKmlvDtiqk'
+        //Stripe.apiKey = 'sk_07vkIYtFhTJY68s2pipRKmlvDtiqk'
         CancelRequest cancelRequest = CancelRequest.findByCancelString(params.cancelLink)
         PurchaseRecord purchaseRecord
         if (cancelRequest && cancelRequest.processed != null && cancelRequest.processed != true){

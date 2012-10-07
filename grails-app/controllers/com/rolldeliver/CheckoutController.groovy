@@ -52,9 +52,9 @@ class CheckoutController {
     
 	def charge()  {
         //Live
-        //Stripe.apiKey ='sk_07vkTfsJXClB16FwyAXCGqFFNJnls'
+        Stripe.apiKey ='sk_07vkTfsJXClB16FwyAXCGqFFNJnls'
         //Test
-        Stripe.apiKey = 'sk_07vkIYtFhTJY68s2pipRKmlvDtiqk'
+        //Stripe.apiKey = 'sk_07vkIYtFhTJY68s2pipRKmlvDtiqk'
         def email = params.email
         def firstName = params.firstName
         def lastName = params.lastName
