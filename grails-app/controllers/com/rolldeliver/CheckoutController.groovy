@@ -52,9 +52,9 @@ class CheckoutController {
     
 	def charge()  {
         //Live
-        Stripe.apiKey ='sk_07vkTfsJXClB16FwyAXCGqFFNJnls'
+        //Stripe.apiKey ='sk_07vkTfsJXClB16FwyAXCGqFFNJnls'
         //Test
-        //Stripe.apiKey = 'sk_07vkIYtFhTJY68s2pipRKmlvDtiqk'
+        Stripe.apiKey = 'sk_07vkIYtFhTJY68s2pipRKmlvDtiqk'
         def email = params.email
         def firstName = params.firstName
         def lastName = params.lastName
@@ -63,13 +63,19 @@ class CheckoutController {
         def city = params.city
         def zip = params.zip
         boolean errorOccurred = false
-
         if(!firstName || !lastName){
             response.status = 500
             def errorResponse = [:]
             errorResponse.error = "Missing params!"
             render errorResponse as JSON
         }else {
+        PurchaseRecord purchaseRecordExisting = PurchaseRecord.findByEmail(email)
+        if(purchaseRecordExisting){
+            def errorResponse = [:]
+            errorResponse.status = "An account alredy exists with this user. Please try another email."
+            response.status = 500
+            render errorResponse as JSON
+        }
         String desc = "email:${email} signed up for delivery at ${address1} ${address2} ${city} ${zip}"
 
         def status

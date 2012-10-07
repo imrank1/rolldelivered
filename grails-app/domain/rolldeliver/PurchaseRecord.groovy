@@ -16,10 +16,14 @@ class PurchaseRecord {
     String address2
     String city
     String zip
+    String cancelRequestId
+    Date cancelDate
     static constraints = {
         description (nullable: true)
         address2(nullable:true)
         address2(blank:true)
         address2(nullable:true)
+        cancelRequestId(nullable: true)
+        cancelDate(nullable: true)
     }
 }
