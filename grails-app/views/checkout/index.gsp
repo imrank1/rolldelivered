@@ -478,9 +478,9 @@
                   <div class="actions" style="clear:none;">
 
                       <span><button type="submit" class="btn btn-primary submit-button " ">Sign up Now!</button>
-		      <span class="help-inline">This is a Secure Transaction.</span>
 
                       <div id="spinnerContainer" style="float:right; width:65%; margin-top:16px"></div>
+		      <span class="help-inline">This is a Secure Transaction.</span>
                       <span>
                   </div>
                 </g:form>
