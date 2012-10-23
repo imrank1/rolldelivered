@@ -1,8 +1,13 @@
-<!DOCTYPE html >                                                                                                                                                     `
+<!DOCTYPE html >                                                                                                                                       
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Roll Delivered: Simple Hassle Free Toilet Paper Subscription</title>
-<meta property="og:image" content="https://s3.amazonaws.com/rolldelivered-static/images/favicon.ico.png"/> 
+  <meta property="og:title" content="Rolldelivered"/>
+  <meta property="og:type" content="service"/>
+  <meta property="og:url" content="https://www.rolldelivered.com"/>
+  <meta property="og:image" content="https://s3.amazonaws.com/rolldelivered-static/images/rolldelivered.png"/>
+  <meta property="og:site_name" content="Rolldelivered"/>
+  <meta property="fb:admins" content="imrank1"/>
   <meta name="description" content="Get toilet paper delivered to your door. Never get caught with your pants down again! Save time, money, and preserve your dignity. Get your Roll Delivered!" />
   <meta name="keywords" content="toilet paper delivery, toilet paper, bathroom tissue, bath tissue, TP, rolls, roll, buy rolls, delivery service, buy toilet paper online, buy toilet paper, easy subscription, toilet paper subscription, delivery service , quality toilet paper, premium toilet paper, plush, fluffy, soft, smooth, brilliant bathroom tissue, toiletries" />
 
