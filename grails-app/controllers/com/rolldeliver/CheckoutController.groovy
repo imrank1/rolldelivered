@@ -12,26 +12,7 @@ import com.stripe.model.Customer;
 class CheckoutController {
 //
     def index() {
-        String scheme = request.getScheme()
-        println "scheme is $scheme"
-
-        String proto = request.getHeader("X-Forwarded-Proto")
-        println "proto is $proto"
-        if(grails.util.Environment.getCurrent().equals(grails.util.Environment.PRODUCTION)){
-                if(!proto.equals("https")){
-                    println "Redirecting to https"
-                    redirect(url:"https://www.rolldelivered.com")
-                } else{
-
-                    render(view: "index")
-
-                }
-        }
-        else{
-            println "Non production mode index"
-            render(view: "index")
-
-        }
+        render(view: "index")
     }
 
 
