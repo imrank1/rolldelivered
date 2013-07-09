@@ -254,8 +254,11 @@
 
             <div class="main_box" id="section1">
 
+                  <div class="alert alert-warning" ><h2> Rolldelivered is shutting down and becoming <a href="https://www.getresupply.com">Resupply</a>. <br>Sorry for the inconveniance. At this time we have stoppd taking sign ups. Please checkout <a href="https://www.getresupplly.com">Resupply</a>. for an even better expierence. All existing customers will no longer be charged and subscriptions will be ended. See you at <a href="https://www.getresupply.com">Resupply!</a></h2></div>
+
       <div class="home_box">
         <div class="text">
+
           <h1>Welcome to Roll Delivered</h1>
           <h2 style="font-weight:bold">We deliver premium toilet paper to you monthly for $8.99. Simple.</h2>
           <h3>No Hassle!<br /> One Step Signup. One Step Cancellation.<br /></h3>
@@ -490,7 +493,7 @@
 
                   <div class="actions" style="clear:none;">
 
-                      <span><button type="submit" class="btn btn-primary submit-button " ">Sign up Now!</button>
+                      <span><button type="submit" class="btn btn-primary submit-button " disabled="disabled">Sign up Now!</button>
 <div class="fb-like" style="margin-top:30px;" data-href="https://www.rolldelivered.com" data-send="false" data-width="450" data-show-faces="true"></div>
                       <div id="spinnerContainer" style="float:right; width:65%; margin-top:16px"></div>
 		      <span class="help-inline">This is a Secure Transaction.</span>
