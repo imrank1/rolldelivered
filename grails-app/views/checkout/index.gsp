@@ -254,7 +254,7 @@
 
             <div class="main_box" id="section1">
 
-                  <div class="alert alert-warning" ><h2> Rolldelivered is shutting down and becoming <a href="https://www.getresupply.com">Resupply</a>. <br>At this time we have stopped taking sign ups. Please checkout <a href="https://www.getresupply.com">Resupply</a>. for an even better expierence. All existing customers will no longer be charged and subscriptions will be ended. See you at <a href="https://www.getresupply.com">Resupply!</a></h2></div>
+                  <div class="alert alert-warning" ><h2> Rolldelivered is shutting down and becoming <a href="https://www.getresupply.com">Resupply</a>. <br>At this time we have stopped taking sign ups. Please checkout Resupply, for <a href="https://www.getresupply.com">automatic delivery of your Home Goods</a>. All existing customers will no longer be charged and subscriptions will be ended. See you at <a href="https://www.getresupply.com">Resupply!</a></h2></div>
 
       <div class="home_box">
         <div class="text">
